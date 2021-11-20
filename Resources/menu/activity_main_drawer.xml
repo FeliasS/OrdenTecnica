@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nuev_orden"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="NUEVA ORDEN" />
+        <item
+            android:id="@+id/reg_ord"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="REGISTRADOS" />
+        <item
+            android:id="@+id/asig_tecn"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="ASIGNAR TECNICO" />
+        <item
+            android:id="@+id/ord_pend"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="ORDENES PENDIENTES" />
+    </group>
+
+    <item android:title="Opciones Adicionales">
+        <menu>
+            <item
+                android:id="@+id/cerr_ses"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Cerrar Sesion" />
+            
+        </menu>
+    </item>
+
+</menu>
