@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ugUIdZdb4jBAe6nL/Rd0ZiqRgwfwC/KXcR0f8cKVWCLkmTwM5wIZ0TmKeYOjfKLAYkdKNDbaKzMIB7LOu1Imdg==",
+  "dgSpecHash": "5ZApyqSXxH7j12QGghuMHTFke0UaHoOLAKuq1BSDbd9GbH6Spi023aENWLCxr7L39vaBsRaZrutobQ1vdAIfvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zink_\\Downloads\\appOrdenTecnica\\appOrdenTecnica.csproj",
+  "projectFilePath": "D:\\Repos\\Xamarin\\appOrdenTecnica\\appOrdenTecnica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zink_\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.activity\\1.1.0.3\\xamarin.androidx.activity.1.1.0.3.nupkg.sha512",

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--en este layout se ingresesar las fechas y diagnostico-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="Fecha:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtFechaAt"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:text="Fecha:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtHoraAt"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:text="Diagnostico:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtDiagnostico"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <!--Aqui si ingresara el front-end para agregar las fotos-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:text="AGREGAR IMAGEN"
+            android:id="@+id/btnAgegarImag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Aqui se imlementara visualizacion \n de las imagenes \n"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <!--Aqui se ingresara las firmas del cliente y tecnico-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <TextView
+            android:text="Firma del tecnico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+        <EditText
+            android:id="@+id/txtFirmaTecnico"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+        <TextView
+            android:text="\n Firma del Cliente"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtFirmaCliente"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
