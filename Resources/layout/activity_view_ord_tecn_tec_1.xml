@@ -57,14 +57,16 @@
 
         <Button
             android:text="AGREGAR IMAGEN"
-            android:id="@+id/btnAgegarImag"
+            android:id="@+id/btnAgregarImg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:clickable="true" />
         <TextView
             android:text="Aqui se imlementara visualizacion \n de las imagenes \n"
             android:textAlignment="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/textView8"/>
 
     </LinearLayout>
 
