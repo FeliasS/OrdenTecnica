@@ -13,8 +13,11 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.5">
+        android:layout_weight="1.5"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
 
+        <!--Hora y Fecha-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -22,7 +25,7 @@
 
             <TextView
                 android:text="Fecha:"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:inputType="date"
@@ -33,7 +36,7 @@
 
             <TextView
                 android:text="Hora:"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:inputType="time"
@@ -44,6 +47,7 @@
 
         </LinearLayout>
 
+        <!--cliente-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -51,7 +55,7 @@
 
             <TextView
                 android:text="Cliente:"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:inputType="text"
@@ -62,6 +66,7 @@
 
         </LinearLayout>
 
+        <!--Sucursal-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -69,7 +74,7 @@
 
             <TextView
                 android:text="Sucursal:"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:inputType="text"
@@ -87,7 +92,7 @@
 
             <TextView
                 android:text="Nombre \nDispositivo:"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:inputType="text"
@@ -105,7 +110,7 @@
 
             <TextView
                 android:text="Problema:"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"/>
             <EditText
                 android:inputType="textMultiLine"
@@ -135,7 +140,9 @@
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:minWidth="25px"
-        android:minHeight="25px">
+        android:minHeight="25px"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -150,7 +157,7 @@
                 android:layout_weight="1"/>
 
             <Button
-                android:text="Registrar Reporte"
+                android:text="@string/nuev_ord_reg"
                 android:id="@+id/btnRegReport"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

@@ -329,7 +329,6 @@ D:\Repos\Xamarin\appOrdenTecnica\bin\Debug\com.companyname.appordentecnica-Signe
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\build.props
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\adb.props
-D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\appOrdenTecnica.csproj.AssemblyReference.cache
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res.flag
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\lp\38\jl\files.cache
@@ -650,3 +649,5 @@ D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res\layout\activity_view_ord_tecn
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res\layout\activity_ord_fin.xml
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res\layout\activity_view_ord_tecn_fin.xml
+D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\android\src\crc642ed101b01c847a59\nuev_ord_activity.java
+D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\android\src\crc642ed101b01c847a59\list_ord_tecn_activity.java

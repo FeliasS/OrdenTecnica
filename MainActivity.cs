@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -10,6 +11,7 @@ using AndroidX.DrawerLayout.Widget;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
+
 
 namespace appOrdenTecnica
 {
@@ -34,6 +36,9 @@ namespace appOrdenTecnica
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            
+
         }
 
         public override void OnBackPressed()
@@ -80,6 +85,8 @@ namespace appOrdenTecnica
             if (id == Resource.Id.nuev_orden)
             {
                 // Handle the camera action
+                var intent = new Intent(this, typeof(list_ord_tecn_activity));
+                StartActivity(intent);
             }
             else if (id == Resource.Id.reg_ord)
             {
