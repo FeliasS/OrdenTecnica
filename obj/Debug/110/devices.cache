@@ -1,1 +1,1 @@
-<Devices><Device id="emulator-5554"><ResultingAbi>x86</ResultingAbi><SdkVersion>23</SdkVersion></Device></Devices>
+<Devices><Device id="emulator-5554"><ResultingAbi>x86</ResultingAbi><SdkVersion>23</SdkVersion></Device><Device id="4d008709d0db2187"><ResultingAbi>armeabi-v7a</ResultingAbi><SdkVersion>21</SdkVersion></Device><Device id="LMX1204HLB5DZ5W8F6"><ResultingAbi>armeabi-v7a</ResultingAbi><SdkVersion>28</SdkVersion></Device></Devices>

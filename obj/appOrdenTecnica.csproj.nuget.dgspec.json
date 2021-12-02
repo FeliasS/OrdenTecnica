@@ -38,6 +38,10 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Xamarin.AndroidX.AppCompat": {
               "target": "Package",
               "version": "[1.2.0.5, )"

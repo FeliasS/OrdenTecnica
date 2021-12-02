@@ -14,16 +14,16 @@ using AndroidX.AppCompat.App;
 using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Plugin.Media;
 
 namespace appOrdenTecnica
 {
-    [Activity(Label = "NuevaOrdenActivity")]
+    [Activity(Label = "NuevaOrdenActivity", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class NuevaOrdenActivity : Activity
     {
         TextView pathlbl;
         String PhotoPath = "";
         String Photo = "";
-        ImageView imgv;
         String alm = "";
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -36,11 +36,38 @@ namespace appOrdenTecnica
             pathlbl.Text = "";
 
             Button btnimgrr = FindViewById<Button>(Resource.Id.btnAgregarImg);
-            btnimgrr.Click += (sender, e) =>
+            btnimgrr.Click += async (sender, e) =>
             {
-                Console.WriteLine("funciona");
+                await TakePhotoAsync();
+                limpiar();
+                
             };
 
+            Button btnaddphotos = FindViewById<Button>(Resource.Id.btnaddphotos);
+            btnaddphotos.Click += async (sender, e) =>
+            {
+                await PickPhotoAsync();
+                limpiar();
+            };
+            
+            
+
+        }
+    public void limpiar() {
+
+            Console.WriteLine(alm);
+            alm = pathlbl.Text;
+            pathlbl.Text = "";
+            
+            if (PhotoPath != null)
+            {
+                pathlbl.Text = alm + "\n" + Photo + "*"; ;
+
+            }
+            else
+            {
+                pathlbl.Text = alm + "" + "|";
+            }
 
         }
         protected override void OnStart()
@@ -68,18 +95,36 @@ namespace appOrdenTecnica
         {
             try
             {
+                await CrossMedia.Current.Initialize();
                 var photo = await MediaPicker.CapturePhotoAsync();
                 await LoadPhotoAsync(photo);
-                Console.WriteLine($"CapturePhotoAsync COMPLETED: {PhotoPath}");
-                if (PhotoPath != null)
-                {
-                    pathlbl.Text = alm + "\n" + Photo + "*"; ;
+                Console.WriteLine($" Captura{PhotoPath}");
+               
 
-                }
-                else
-                {
-                    pathlbl.Text = alm + "" + "|";
-                }
+            }
+            catch (FeatureNotSupportedException fnsEx)
+            {
+                // Feature is not supported on the device
+            }
+            catch (PermissionException pEx)
+            {
+                // Permissions not granted
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"CapturePhotoAsync THREW: {ex.Message}");
+            }
+        }
+        //public void CreateDirectory(string path) { this.isolatedStorageFile.CreateDirectory(path); }
+        async Task PickPhotoAsync()
+        {
+            try
+            {
+                await CrossMedia.Current.Initialize();
+                var photo = await MediaPicker.PickPhotoAsync();
+                await LoadPhotoAsync(photo);
+                Console.WriteLine($"Explorer COMPLETED: {PhotoPath}");
+                
 
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -106,8 +151,16 @@ namespace appOrdenTecnica
             }
             else
             {
-                // save the file into local storage
-                var newFile = Path.Combine("/storage/emulated/0/DCIM/Camera/", photo.FileName);//nuevo lugar a copiar
+                string directoryname = "/storage/emulated/0/Pictures/App/";
+                if (!Directory.Exists(directoryname))
+                {
+                    Directory.CreateDirectory(directoryname);
+                }
+                
+                // save the file into local storage 
+                var newFile = Path.Combine(directoryname,photo.FileName);//nuevo lugar a copiar  DCIM/Camera/
+                //var newFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), photo.FileName);
+                //var newFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures)+ "/App/", photo.FileName);
 
                 using (var stream = await photo.OpenReadAsync())
                 using (var newStream = File.OpenWrite(newFile))

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jN2WsCFugTdmF69sJa3utRc3Ju10euY7iUvFzFAZ5p8k6cdcRee3797jvJiAdlcjiF0NL2LwlnVi+hBLTKgohw==",
+  "dgSpecHash": "LQ+5YFWADhm9baVLlGWXgd5Sepp2Voi9p+n7Zln9Qg3aV8yZ7K2rDzhvodS3XKbjGWB7UoL2fVCsian6rSvusA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Poaty\\source\\repos\\22\\appOrdenTecnica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Poaty\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Poaty\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.activity\\1.1.0.3\\xamarin.androidx.activity.1.1.0.3.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.annotation\\1.1.0.7\\xamarin.androidx.annotation.1.1.0.7.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.appcompat\\1.2.0.5\\xamarin.androidx.appcompat.1.2.0.5.nupkg.sha512",
