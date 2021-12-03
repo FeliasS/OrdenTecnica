@@ -15,7 +15,7 @@ using Google.Android.Material.Snackbar;
 
 namespace appOrdenTecnica
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -85,7 +85,7 @@ namespace appOrdenTecnica
             if (id == Resource.Id.nuev_orden)
             {
                 // Handle the camera action
-                var intent = new Intent(this, typeof(list_ord_tecn_activity));
+                var intent = new Intent(this, typeof(nuev_ord_activity));
                 StartActivity(intent);
             }
             else if (id == Resource.Id.reg_ord)

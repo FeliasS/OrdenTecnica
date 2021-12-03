@@ -2,7 +2,7 @@ package crc642ed101b01c847a59;
 
 
 public class nuev_ord_activity
-	extends android.app.Activity
+	extends androidx.appcompat.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer
 {
@@ -21,6 +21,14 @@ public class nuev_ord_activity
 		super ();
 		if (getClass () == nuev_ord_activity.class)
 			mono.android.TypeManager.Activate ("appOrdenTecnica.nuev_ord_activity, appOrdenTecnica", "", this, new java.lang.Object[] {  });
+	}
+
+
+	public nuev_ord_activity (int p0)
+	{
+		super (p0);
+		if (getClass () == nuev_ord_activity.class)
+			mono.android.TypeManager.Activate ("appOrdenTecnica.nuev_ord_activity, appOrdenTecnica", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
 	}
 
 

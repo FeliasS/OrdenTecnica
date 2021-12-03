@@ -8,36 +8,31 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
-    <!--Layout Lista de ordenes-->
-    <LinearLayout
-        android:orientation="horizontal"
+   <TextView
+        android:text="LISTA DE ORDENES"
+        android:textAlignment="center"
+        android:textSize="30dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="5">
-
-        <!--aqui se implementara el buscador dinamico-->
-         <SearchView
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/searchView1" 
-            android:queryHint="Buscar"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"/>
+    <Button
+        android:id="@+id/btnNuevaOrden"
+        android:text="nueva orden"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-        
-        <!--Aqui se implementara la lista que se filtrara en funcion
-            del buscador dinamico-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Implementacion de lista dinamico \n para la relacion de ORDENES TECNICAS CREADAS \n sin asignar tecnico"
-            android:textAlignment="center"/>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"/>
+    <SearchView
+        android:id="@+id/txtSearch"
+        android:queryHint="Buscar..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="15sp"/>
+    <TextView
+        android:textAlignment="center"
+        android:text="Implementacion del recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

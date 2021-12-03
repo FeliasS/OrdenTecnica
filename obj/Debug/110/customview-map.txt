@@ -14,8 +14,11 @@ adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 androidx.appcompat.widget.Toolbar;obj\Debug\110\res\layout\app_bar_main.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\110\res\layout\app_bar_main.xml
 androidx.drawerlayout.widget.DrawerLayout;obj\Debug\110\res\layout\activity_main.xml
+androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\nuev_orden_tecn.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
+Button;obj\Debug\110\res\layout\activity_list_ord_tecn.xml
+Button;obj\Debug\110\res\layout\activity_login.xml
 Button;obj\Debug\110\res\layout\activity_view_ord_tecn.xml
 Button;obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
 Button;obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
@@ -27,6 +30,7 @@ com.google.android.material.appbar.AppBarLayout;obj\Debug\110\res\layout\app_bar
 com.google.android.material.floatingactionbutton.FloatingActionButton;obj\Debug\110\res\layout\app_bar_main.xml
 com.google.android.material.navigation.NavigationView;obj\Debug\110\res\layout\activity_main.xml
 dimen;obj\Debug\110\res\values\dimens.xml
+EditText;obj\Debug\110\res\layout\activity_login.xml
 EditText;obj\Debug\110\res\layout\activity_view_ord_tecn.xml
 EditText;obj\Debug\110\res\layout\activity_view_ord_tecn_fin.xml
 EditText;obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
@@ -38,6 +42,7 @@ foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 gradient;obj\Debug\110\res\drawable\side_nav_bar.xml
 group;obj\Debug\110\res\menu\activity_main_drawer.xml
+ImageView;obj\Debug\110\res\layout\activity_login.xml
 ImageView;obj\Debug\110\res\layout\nav_header_main.xml
 include;obj\Debug\110\res\layout\activity_main.xml
 include;obj\Debug\110\res\layout\app_bar_main.xml
@@ -47,6 +52,7 @@ item;obj\Debug\110\res\values\drawables.xml
 item;obj\Debug\110\res\values\styles.xml
 LinearLayout;obj\Debug\110\res\layout\activity_asig_tecn.xml
 LinearLayout;obj\Debug\110\res\layout\activity_list_ord_tecn.xml
+LinearLayout;obj\Debug\110\res\layout\activity_login.xml
 LinearLayout;obj\Debug\110\res\layout\activity_ord_fin.xml
 LinearLayout;obj\Debug\110\res\layout\activity_ord_pend.xml
 LinearLayout;obj\Debug\110\res\layout\activity_rel_tecn.xml

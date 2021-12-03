@@ -651,3 +651,7 @@ D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res\layout\activity_ord_fin.xml
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res\layout\activity_view_ord_tecn_fin.xml
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\android\src\crc642ed101b01c847a59\nuev_ord_activity.java
 D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\android\src\crc642ed101b01c847a59\list_ord_tecn_activity.java
+D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\appOrdenTecnica.csproj.AssemblyReference.cache
+D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res\layout\activity_login.xml
+D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\res\drawable\ic_logo_ot.png
+D:\Repos\Xamarin\appOrdenTecnica\obj\Debug\110\android\src\crc642ed101b01c847a59\ActivityLogin.java
