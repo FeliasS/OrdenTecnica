@@ -23,7 +23,7 @@ Button;obj\Debug\110\res\layout\activity_view_ord_tecn.xml
 Button;obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
 Button;obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
 Button;obj\Debug\110\res\layout\nuev_orden_tecn.xml
-cache-path;D:\Repos\Xamarin\proyectoXamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+cache-path;D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\110\res\values\colors.xml
 color;obj\Debug\110\res\values\ic_launcher_background.xml
 com.google.android.material.appbar.AppBarLayout;obj\Debug\110\res\layout\app_bar_main.xml
@@ -36,8 +36,8 @@ EditText;obj\Debug\110\res\layout\activity_view_ord_tecn_fin.xml
 EditText;obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
 EditText;obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
 EditText;obj\Debug\110\res\layout\nuev_orden_tecn.xml
-external-cache-path;D:\Repos\Xamarin\proyectoXamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-external-path;D:\Repos\Xamarin\proyectoXamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-cache-path;D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 gradient;obj\Debug\110\res\drawable\side_nav_bar.xml
@@ -72,7 +72,7 @@ path;obj\Debug\110\res\drawable-v21\ic_menu_manage.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_send.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_share.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_slideshow.xml
-paths;D:\Repos\Xamarin\proyectoXamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RelativeLayout;obj\Debug\110\res\layout\content_main.xml
 resources;obj\Debug\110\res\values\colors.xml
 resources;obj\Debug\110\res\values\dimens.xml
