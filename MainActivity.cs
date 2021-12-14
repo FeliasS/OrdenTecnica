@@ -11,6 +11,7 @@ using AndroidX.DrawerLayout.Widget;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
+using appOrdenTecnica.Fragments; // Traemos a los Fragmentos
 
 
 namespace appOrdenTecnica
@@ -18,6 +19,10 @@ namespace appOrdenTecnica
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
+
+        Fragments_lista_ordenes frgListOrdenes;
+        Fragments_nueva_orden nueva_orden;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -37,6 +42,14 @@ namespace appOrdenTecnica
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
+            // Instanciamos el objeto
+            frgListOrdenes = new Fragments_lista_ordenes();
+            // Asignamos variable a Fragment Manager e iniciamos la transaccion
+            var transaccion = SupportFragmentManager.BeginTransaction();
+            // Le asignamos el contenedor de los fragmentos y el fragmento que cargara
+            transaccion.Add(Resource.Id.ConteinerLayout, frgListOrdenes);
+            // Confirmamos la transaccion
+            transaccion.Commit();
             
 
         }
@@ -85,20 +98,45 @@ namespace appOrdenTecnica
             if (id == Resource.Id.nuev_orden)
             {
                 // Handle the camera action
-                var intent = new Intent(this, typeof(nuev_ord_activity));
-                StartActivity(intent);
+                nueva_orden = new Fragments_nueva_orden();
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                // Reemplazamos el contenido anterior con el nuevo fragmento
+                transaccion.Replace(Resource.Id.ConteinerLayout, nueva_orden);
+                // Confirmamos la transaccion
+                transaccion.Commit();
             }
             else if (id == Resource.Id.reg_ord)
             {
-
+                // Instanciamos el objeto
+                frgListOrdenes = new Fragments_lista_ordenes();
+                // Asignamos variable a Fragment Manager e iniciamos la transaccion
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                // Le asignamos el contenedor de los fragmentos y el fragmento que cargara
+                transaccion.Replace(Resource.Id.ConteinerLayout, frgListOrdenes);
+                // Confirmamos la transaccion
+                transaccion.Commit();
             }
             else if (id == Resource.Id.asig_tecn)
             {
-
+                // Instanciamos el objeto
+                frgListOrdenes = new Fragments_lista_ordenes();
+                // Asignamos variable a Fragment Manager e iniciamos la transaccion
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                // Le asignamos el contenedor de los fragmentos y el fragmento que cargara
+                transaccion.Replace(Resource.Id.ConteinerLayout, frgListOrdenes);
+                // Confirmamos la transaccion
+                transaccion.Commit();
             }
             else if (id == Resource.Id.ord_pend)
             {
-
+                // Instanciamos el objeto
+                frgListOrdenes = new Fragments_lista_ordenes();
+                // Asignamos variable a Fragment Manager e iniciamos la transaccion
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                // Le asignamos el contenedor de los fragmentos y el fragmento que cargara
+                transaccion.Replace(Resource.Id.ConteinerLayout, frgListOrdenes);
+                // Confirmamos la transaccion
+                transaccion.Commit();
             }
             else if (id == Resource.Id.cerr_ses)
             {

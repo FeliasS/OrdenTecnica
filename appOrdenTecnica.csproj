@@ -62,8 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivityLogin.cs" />
+    <Compile Include="Adapter\MyViewHolder.cs" />
+    <Compile Include="Adapter\OrdenTecnica_Rview.cs" />
+    <Compile Include="Fragments\Fragments_lista_ordenes.cs" />
+    <Compile Include="Fragments\Fragments_nueva_orden.cs" />
+    <Compile Include="Interfaces\Ordenes_Tecnicas.cs" />
     <Compile Include="list_ord_tecn_activity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Model\OrdenTecnica.cs" />
     <Compile Include="nuev_ord_activity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,11 +136,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\nuev_orden_tecn.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_asig_tecn.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -156,11 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_view_ord_tecn.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_view_tecn_asig.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -193,8 +189,19 @@
     <AndroidResource Include="Resources\drawable\ic_logo_ot.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Fragments\" />
-    <Folder Include="Interfaces\" />
+    <AndroidResource Include="Resources\layout\item_list_holder.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_lista_ordenes.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_nueva_orden.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

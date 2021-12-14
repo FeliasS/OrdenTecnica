@@ -25,7 +25,7 @@ namespace appOrdenTecnica
             base.OnCreate(savedInstanceState);
 
             // Designando layout nuev_orden_activity.xml
-            SetContentView(Resource.Layout.nuev_orden_tecn);
+            SetContentView(Resource.Layout.layout_nueva_orden);
            
             // obteniendo los ID de los controles
             fecha = FindViewById<EditText>(Resource.Id.txtFecha);

@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_main">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:gravity="center"
+        
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        tools:ignore="UselessParent">
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="16dp">
 
         <TextView
             android:id="@+id/nuevOrden"
             android:text="NUEVA ORDEN"
+            android:textStyle="bold"
             android:textAlignment="center"
             android:textSize="30dp"
             android:layout_width="match_parent"
@@ -74,14 +69,12 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="80dp"/>
-       
+        <Button
+            android:id="@+id/btnGenerarOrden"
+            android:text="generar orden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnGenerarOrden"
-        android:text="generar orden"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"/>
-</LinearLayout>
 
+</LinearLayout>

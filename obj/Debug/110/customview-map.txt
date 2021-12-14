@@ -12,8 +12,11 @@
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 androidx.appcompat.widget.Toolbar;obj\Debug\110\res\layout\app_bar_main.xml
+androidx.cardview.widget.CardView;obj\Debug\110\res\layout\item_list_holder.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\110\res\layout\app_bar_main.xml
 androidx.drawerlayout.widget.DrawerLayout;obj\Debug\110\res\layout\activity_main.xml
+androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\layout_lista_ordenes.xml
+androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\layout_nueva_orden.xml
 androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\nuev_orden_tecn.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
@@ -22,6 +25,7 @@ Button;obj\Debug\110\res\layout\activity_login.xml
 Button;obj\Debug\110\res\layout\activity_view_ord_tecn.xml
 Button;obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
 Button;obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
+Button;obj\Debug\110\res\layout\layout_nueva_orden.xml
 Button;obj\Debug\110\res\layout\nuev_orden_tecn.xml
 cache-path;D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\110\res\values\colors.xml
@@ -35,11 +39,13 @@ EditText;obj\Debug\110\res\layout\activity_view_ord_tecn.xml
 EditText;obj\Debug\110\res\layout\activity_view_ord_tecn_fin.xml
 EditText;obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
 EditText;obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
+EditText;obj\Debug\110\res\layout\layout_nueva_orden.xml
 EditText;obj\Debug\110\res\layout\nuev_orden_tecn.xml
 external-cache-path;D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
+FrameLayout;obj\Debug\110\res\layout\content_main.xml
 gradient;obj\Debug\110\res\drawable\side_nav_bar.xml
 group;obj\Debug\110\res\menu\activity_main_drawer.xml
 ImageView;obj\Debug\110\res\layout\activity_login.xml
@@ -61,6 +67,9 @@ LinearLayout;obj\Debug\110\res\layout\activity_view_ord_tecn_fin.xml
 LinearLayout;obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
 LinearLayout;obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
 LinearLayout;obj\Debug\110\res\layout\activity_view_tecn_asig.xml
+LinearLayout;obj\Debug\110\res\layout\item_list_holder.xml
+LinearLayout;obj\Debug\110\res\layout\layout_lista_ordenes.xml
+LinearLayout;obj\Debug\110\res\layout\layout_nueva_orden.xml
 LinearLayout;obj\Debug\110\res\layout\lista_ordenes.xml
 LinearLayout;obj\Debug\110\res\layout\nav_header_main.xml
 LinearLayout;obj\Debug\110\res\layout\nuev_orden_tecn.xml
@@ -86,6 +95,7 @@ SearchView;obj\Debug\110\res\layout\activity_ord_fin.xml
 SearchView;obj\Debug\110\res\layout\activity_ord_pend.xml
 SearchView;obj\Debug\110\res\layout\activity_rel_tecn.xml
 SearchView;obj\Debug\110\res\layout\activity_view_tecn_asig.xml
+SearchView;obj\Debug\110\res\layout\layout_lista_ordenes.xml
 SearchView;obj\Debug\110\res\layout\lista_ordenes.xml
 shape;obj\Debug\110\res\drawable\side_nav_bar.xml
 string;obj\Debug\110\res\values\strings.xml
@@ -101,6 +111,9 @@ TextView;obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
 TextView;obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
 TextView;obj\Debug\110\res\layout\activity_view_tecn_asig.xml
 TextView;obj\Debug\110\res\layout\content_main.xml
+TextView;obj\Debug\110\res\layout\item_list_holder.xml
+TextView;obj\Debug\110\res\layout\layout_lista_ordenes.xml
+TextView;obj\Debug\110\res\layout\layout_nueva_orden.xml
 TextView;obj\Debug\110\res\layout\lista_ordenes.xml
 TextView;obj\Debug\110\res\layout\nav_header_main.xml
 TextView;obj\Debug\110\res\layout\nuev_orden_tecn.xml

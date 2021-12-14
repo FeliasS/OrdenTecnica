@@ -1063,13 +1063,11 @@ D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\mipmap-xxxhdpi\ic_launcher.png
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\mipmap-xxxhdpi\ic_launcher_foreground.png
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\mipmap-xxxhdpi\ic_launcher_round.png
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\lista_ordenes.xml
-D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\nuev_orden_tecn.xml
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_asig_tecn.xml
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_rel_tecn.xml
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_ord_pend.xml
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_list_ord_tecn.xml
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_view_ord_tecn.xml
-D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_view_tecn_asig.xml
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_view_ord_tecn_tec.xml
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_view_ord_tecn_tec_1.xml
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\activity_ord_fin.xml
@@ -1327,3 +1325,10 @@ D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\stamp\_ConvertResourcesCases.stamp
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\layout_lista_ordenes.xml
+D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\android\src\crc6424221de58926ba2a\Fragments_lista_ordenes.java
+D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\layout_nueva_orden.xml
+D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\android\src\crc6424221de58926ba2a\Fragments_nueva_orden.java
+D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\res\layout\item_list_holder.xml
+D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\android\src\crc640dbacfffad81f79c\MyViewHolder.java
+D:\Repos\Xamarin\OrdenTecnica\obj\Debug\110\android\src\crc640dbacfffad81f79c\OrdenTecnica_Rview.java
