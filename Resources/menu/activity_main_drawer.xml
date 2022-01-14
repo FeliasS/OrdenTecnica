@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nuev_orden"
+            android:icon="@drawable/ic_menu_new"
+            android:visible="false"
+            android:title="NUEVA ORDEN" />
+        <item
+            android:id="@+id/reg_ord"
+            android:icon="@drawable/ic_menu_lista"
+            android:title="REGISTRADOS"
+			android:visible="false"/>
+        <item
+            android:id="@+id/asig_tecn"
+            android:icon="@drawable/ic_menu_cargar"
+            android:title="ASIGNAR TECNICO"
+			android:visible="false"/>
+        <item
+            android:id="@+id/ord_pend"
+            android:icon="@drawable/ic_menu_alerta"
+            android:title="PENDIENTES"
+			android:visible="false"/>
+	    <item
+            android:id="@+id/item_asignados"
+            android:icon="@drawable/ic_menu_asignados"
+            android:title="ASIGNADOS"
+			android:visible="false"/>
+		<item
+            android:id="@+id/item_culminados"
+            android:icon="@drawable/ic_menu_culminados"
+            android:title="CULMINADOS"
+			android:visible="false"/>
+    </group>
+
+    <item android:title="Opciones Adicionales">
+        <menu>
+            <item
+                android:id="@+id/cerr_ses"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Cerrar Sesion" />
+            
+        </menu>
+    </item>
+
+</menu>
