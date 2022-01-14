@@ -74,8 +74,8 @@ namespace appOrdenTecnica.Fragments
             btnAsignarTecnico.Click += (sender, e) =>
             {
                 Android.App.AlertDialog.Builder dg = new Android.App.AlertDialog.Builder(Activity);
-                dg.SetTitle("DESCRIBA SU PROBLEMA");
-                dg.SetMessage("Rellene los campos para reportar su problema (1 item por problema)"); ;
+                dg.SetTitle("SELECCIONE UN TECNICO");
+                dg.SetMessage("Puede Filtrar a los tecnicos por su nombre"); ;
                 view = inflater.Inflate(Resource.Layout.layout_lista_tecnicos, null, true);
                 searchView = view.FindViewById<SearchView>(Resource.Id.SearchTecnico);//*2
                 SearchListener();//*4

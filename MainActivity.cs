@@ -219,7 +219,8 @@ namespace appOrdenTecnica
             }
             else if (id == Resource.Id.cerr_ses)
             {
-
+                //this.MoveTaskToBack(true);
+                this.FinishAffinity();
             }
            
 

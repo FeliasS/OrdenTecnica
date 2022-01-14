@@ -6,7 +6,7 @@
 
     <SearchView 
         android:id="@+id/SearchTecnico"
-        android:queryHint="Nro Id Tecnicos"
+        android:queryHint="Nombre del Tecnico"
         android:iconifiedByDefault="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/><!-- android:iconifiedByDefault="false"-->
