@@ -13,10 +13,11 @@ using appOrdenTecnica.Model;
 
 namespace appOrdenTecnica.Adapter
 {
-    public class OrdenTecnica_Rview: RecyclerView.Adapter
+    public class OrdenTecnica_Rview: RecyclerView.Adapter  //<OrdenTecnica_Rview.ViewHolder>
     {
         Context context;
         List<OrdenTecnica> items; // Obtenemos los datos de la BD
+       
 
         // Constructor
         public OrdenTecnica_Rview(Context context, List<OrdenTecnica> items)
@@ -26,6 +27,8 @@ namespace appOrdenTecnica.Adapter
         }
 
         public override int ItemCount => items.Count;
+
+       
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
@@ -41,6 +44,9 @@ namespace appOrdenTecnica.Adapter
             // El item_list_holder mostrara los datos obtenidos
             View itemView = LayoutInflater.From(context).Inflate(Resource.Layout.item_list_holder, parent, false);
             return new MyViewHolder(itemView);
+            //getAdapterPosition();
         }
+
+       
     }
 }

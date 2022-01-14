@@ -62,15 +62,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivityLogin.cs" />
-    <Compile Include="Adapter\MyViewHolder.cs" />
-    <Compile Include="Adapter\OrdenTecnica_Rview.cs" />
-    <Compile Include="Fragments\Fragments_lista_ordenes.cs" />
-    <Compile Include="Fragments\Fragments_nueva_orden.cs" />
+    <Compile Include="..\ListaOrdenAdapter.cs">
+      <Link>Adapter\ListaOrdenAdapter.cs</Link>
+    </Compile>
+    <Compile Include="Adapter\ListaAsignadosTodosAdapter.cs" />
+    <Compile Include="Adapter\ListaPorAsignarAdapter.cs" />
+    <Compile Include="Adapter\ListaTecnicosAdapter.cs" />
+    <Compile Include="Fragments\FragmentAsignadosxTecLista.cs" />
+    <Compile Include="Fragments\FragmentCulminadosLista.cs" />
+    <Compile Include="Fragments\FragmentDelTecnicoOrden.cs" />
+    <Compile Include="Fragments\FragmentPorAsignarLista.cs" />
+    <Compile Include="Fragments\FragmentEditarOrden.cs" />
+    <Compile Include="..\Fragments_lista_ordenes.cs">
+      <Link>Fragments\Fragments_lista_ordenes.cs</Link>
+    </Compile>
+    <Compile Include="Fragments\FragmentCrearOrden.cs" />
+    <Compile Include="Fragments\FragmentAsignadosTodosLista.cs" />
+    <Compile Include="Fragments\FragmentPorAsignarOrden.cs" />
     <Compile Include="Interfaces\Ordenes_Tecnicas.cs" />
-    <Compile Include="list_ord_tecn_activity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Model\OrdenTecnica.cs" />
-    <Compile Include="nuev_ord_activity.cs" />
+    <Compile Include="Model\Tecnicos.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Resources\drawable\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -127,58 +145,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.5" />
+    <PackageReference Include="Xamarin.AndroidX.RecyclerView">
+      <Version>1.2.1.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\lista_ordenes.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_asig_tecn.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_rel_tecn.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_ord_pend.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_list_ord_tecn.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_view_ord_tecn.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_view_ord_tecn_tec.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_view_ord_tecn_tec_1.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_ord_fin.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_view_ord_tecn_fin.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_login.xml">
@@ -200,6 +171,70 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\layout_nueva_orden.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\imgbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\custom_input_v1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_nueva_orden2.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_agregar_enlace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_anadir_imagen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_luna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_sol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_lista_tecnicos.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\item_list_tecnicos.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icons8_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\custom_input_notedit.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\item_list_porasignar.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\item_list_revisar.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

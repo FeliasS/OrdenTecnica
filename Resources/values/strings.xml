@@ -7,4 +7,7 @@
 	<string name="user_name">Usuario</string>
 	<string name="password">Password</string>
 	<string name="ingresar_login">Ingresar</string>
+	
+	<string name="labelLogin">LOGIN</string>
+	<string name="labelMain">SISTEMA DE ORDENES</string>
 </resources>

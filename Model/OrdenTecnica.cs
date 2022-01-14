@@ -18,6 +18,8 @@ namespace appOrdenTecnica.Model
         public string Hora { get; set; }
         public string Accion { get; set; }
 
+        //estado
+
         public OrdenTecnica(string codigo, string fecha, string hora, string accion)
         {
             this.Codigo = codigo;

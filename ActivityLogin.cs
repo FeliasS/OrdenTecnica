@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using appOrdenTecnica.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Text;
 
 namespace appOrdenTecnica
 {
-    [Activity(Label = "ActivityLogin", MainLauncher =true)]
+    [Activity(Label = "@string/labelLogin", MainLauncher =true)]
     public class ActivityLogin : Activity
     {
         // obtenemos las id de los botones
@@ -36,7 +37,7 @@ namespace appOrdenTecnica
             string _user = _userName.Text.ToString();
             string _pass = _password.Text.ToString();
             // Instanciamos el componente Mensaje de alerta
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            //AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
             if (cajasVacias(_user, _pass).Equals(true))
             {
@@ -54,10 +55,34 @@ namespace appOrdenTecnica
             else
             {
                 Console.WriteLine("campos llenos");
-                var intent = new Intent(this, typeof(MainActivity));
-                StartActivity(intent);
-                cleanText();
-            }
+
+                Usuario operador = new Usuario();
+                Usuario usuario = new Usuario();
+                usuario = operador.Tempbd(_user, _pass);
+
+             
+                if (usuario.idUser != null) {
+
+                    var intent = new Intent(this, typeof(MainActivity));
+
+                    ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+                    ISharedPreferencesEditor  editor = prefs.Edit();
+                    editor.PutString("iduser", usuario.idUser);
+                    editor.PutInt("cargo", usuario.cargoUser);
+                    editor.Apply();
+
+                    /*intent.PutExtra("iduser", "" + usuario.idUser);
+                    intent.PutExtra("cargo", "" + usuario.cargoUser);*/
+                    //intent.PutExtra("nombrecliente", "" + );
+                    StartActivity(intent);
+                    cleanText();
+
+
+                }
+
+                
+            
+    }
         }
 
         // Validamos campos vacios

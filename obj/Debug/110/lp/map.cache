@@ -1,5 +1,6 @@
 Xamarin.AndroidX.Activity.dll
 Xamarin.AndroidX.Annotation.dll
+Xamarin.AndroidX.Annotation.Experimental.dll
 Xamarin.AndroidX.AppCompat.AppCompatResources.dll
 Xamarin.AndroidX.AppCompat.dll
 Xamarin.AndroidX.Arch.Core.Common.dll
@@ -40,7 +41,9 @@ Xamarin.Essentials.dll
 Xamarin.Google.Android.Material.dll
 Xamarin.Google.Guava.ListenableFuture.dll
 androidx.versionedparcelable.versionedparcelable.aar
+androidx.arch.core.core-runtime.aar
 androidx.lifecycle.lifecycle-runtime.aar
+androidx.annotation.annotation-experimental.aar
 androidx.core.core.aar
 androidx.customview.customview.aar
 androidx.viewpager.viewpager.aar
@@ -49,7 +52,6 @@ androidx.interpolator.interpolator.aar
 androidx.vectordrawable.vectordrawable-animated.aar
 androidx.savedstate.savedstate.aar
 androidx.lifecycle.lifecycle-viewmodel.aar
-androidx.arch.core.core-runtime.aar
 androidx.lifecycle.lifecycle-livedata-core.aar
 androidx.loader.loader.aar
 androidx.lifecycle.lifecycle-viewmodel-savedstate.aar
