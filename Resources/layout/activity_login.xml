@@ -3,17 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/imgbackground"
+   
+    android:padding="30dp"
     android:gravity="center">
-
-    <ImageView
-            android:src="@drawable/ic_logo_ot"
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:id="@+id/imageView1"
-            android:contentDescription=""/>
+    
+    <Space
+         android:layout_width="match_parent"
+         android:layout_height="160dp"/>
+  
     <EditText
             android:id="@+id/txtUser"
-            android:layout_below="@id/imageView1"
             android:hint="@string/user_name"
             android:inputType="text"
             android:textAlignment="center"

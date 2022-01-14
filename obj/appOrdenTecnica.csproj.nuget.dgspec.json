@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repos\\Xamarin\\OrdenTecnica\\appOrdenTecnica.csproj": {}
+    "C:\\Users\\Poaty\\source\\repos\\2117171414\\OrdenTecnica-ver4\\OrdenTecnica-master\\appOrdenTecnica.csproj": {}
   },
   "projects": {
-    "D:\\Repos\\Xamarin\\OrdenTecnica\\appOrdenTecnica.csproj": {
+    "C:\\Users\\Poaty\\source\\repos\\2117171414\\OrdenTecnica-ver4\\OrdenTecnica-master\\appOrdenTecnica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repos\\Xamarin\\OrdenTecnica\\appOrdenTecnica.csproj",
+        "projectUniqueName": "C:\\Users\\Poaty\\source\\repos\\2117171414\\OrdenTecnica-ver4\\OrdenTecnica-master\\appOrdenTecnica.csproj",
         "projectName": "appOrdenTecnica",
-        "projectPath": "D:\\Repos\\Xamarin\\OrdenTecnica\\appOrdenTecnica.csproj",
-        "packagesPath": "C:\\Users\\zink_\\.nuget\\packages\\",
-        "outputPath": "D:\\Repos\\Xamarin\\OrdenTecnica\\obj\\",
+        "projectPath": "C:\\Users\\Poaty\\source\\repos\\2117171414\\OrdenTecnica-ver4\\OrdenTecnica-master\\appOrdenTecnica.csproj",
+        "packagesPath": "C:\\Users\\Poaty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Poaty\\source\\repos\\2117171414\\OrdenTecnica-ver4\\OrdenTecnica-master\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\zink_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Poaty\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

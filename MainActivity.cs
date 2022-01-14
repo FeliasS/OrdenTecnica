@@ -16,12 +16,16 @@ using appOrdenTecnica.Fragments; // Traemos a los Fragmentos
 
 namespace appOrdenTecnica
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
+    [Activity(Label = "@string/labelMain", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false , WindowSoftInputMode = SoftInput.StateHidden)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-
+        //Fragments_nueva_orden nueva_orden;
         Fragments_lista_ordenes frgListOrdenes;
-        Fragments_nueva_orden nueva_orden;
+        FragmentCrearOrden FragmentCrearOrden; 
+        FragmentPorAsignarLista FragmentPorAsignarLista;
+        FragmentAsignadosTodosLista FragmentAsignadosTodosLista;//todos los pedidos asignados FragmentPendientesLista
+        FragmentAsignadosxTecLista FragmentAsignadosxTecLista; //solo los pedidos asignados a ese tecnico FragmentAsignadosLista
+        FragmentCulminadosLista FragmentCulminadosLista;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,32 +43,96 @@ namespace appOrdenTecnica
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
+
+            //
+            ISharedPreferences pref = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+            pref.GetString(("iduser"), null);
+            int cargo = pref.GetInt(("cargo"), 0);
+            Console.WriteLine("cargo VERRRRRRR" + cargo);
+            //
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+            switch (cargo)
+            {
+                case 1:
+                    navigationView.Menu.FindItem(Resource.Id.nuev_orden).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.reg_ord).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.asig_tecn).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.ord_pend).SetVisible(true);
+                    // Instanciamos el objeto
+                    frgListOrdenes = new Fragments_lista_ordenes();
+                    // Asignamos variable a Fragment Manager e iniciamos la transaccion
+                    var transaccion = SupportFragmentManager.BeginTransaction();
+                    // Le asignamos el contenedor de los fragmentos y el fragmento que cargara
+                    transaccion.Add(Resource.Id.ConteinerLayout, frgListOrdenes);
+                    // Confirmamos la transaccion
+                    transaccion.Commit();
+                    break;
+                case 2:
+                    navigationView.Menu.FindItem(Resource.Id.asig_tecn).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.ord_pend).SetVisible(true);
 
-            // Instanciamos el objeto
-            frgListOrdenes = new Fragments_lista_ordenes();
-            // Asignamos variable a Fragment Manager e iniciamos la transaccion
-            var transaccion = SupportFragmentManager.BeginTransaction();
-            // Le asignamos el contenedor de los fragmentos y el fragmento que cargara
-            transaccion.Add(Resource.Id.ConteinerLayout, frgListOrdenes);
-            // Confirmamos la transaccion
-            transaccion.Commit();
+                    //primer fragment
+                    FragmentPorAsignarLista = new FragmentPorAsignarLista();
+                    var transaccion2 = SupportFragmentManager.BeginTransaction();
+                    transaccion2.Replace(Resource.Id.ConteinerLayout, FragmentPorAsignarLista);
+                    transaccion2.Commit();
+                    break;
+                case 3:
+                    navigationView.Menu.FindItem(Resource.Id.item_asignados).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.item_culminados).SetVisible(true);
+                    //primer fragment
+                    FragmentAsignadosxTecLista = new FragmentAsignadosxTecLista();
+                    var transaccion3 = SupportFragmentManager.BeginTransaction();
+                    transaccion3.Replace(Resource.Id.ConteinerLayout, FragmentAsignadosxTecLista);
+                    transaccion3.Commit();
+                    break;
+
+            }
+           
+
             
 
-        }
+            //SupportFragmentManager.BeginTransaction().Add(Resource.Id.ConteinerLayout, frgListOrdenes).Commit();
 
+
+        }
+        int counter = 0;
         public override void OnBackPressed()
         {
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if(drawer.IsDrawerOpen(GravityCompat.Start))
+            int count = SupportFragmentManager.BackStackEntryCount;
+            
+            
+            if (count == 0)
             {
-                drawer.CloseDrawer(GravityCompat.Start);
+                counter++;
+                
+                if (counter == 1)
+                {
+                    Android.Widget.Toast.MakeText(this, "Tap una vez más para salir", Android.Widget.ToastLength.Short).Show();
+                }
+                else if (counter == 2) {
+
+                    base.OnBackPressed();
+                }
+                
+                /*DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+                if (drawer.IsDrawerOpen(GravityCompat.Start))
+                {
+                    drawer.CloseDrawer(GravityCompat.Start);
+                }
+                else
+                {
+                    base.OnBackPressed();
+                }*/
+                //additional code
             }
             else
             {
-                base.OnBackPressed();
+                SupportFragmentManager.PopBackStack();
+                counter = 0;
             }
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -95,14 +163,15 @@ namespace appOrdenTecnica
         {
             int id = item.ItemId;
 
-            if (id == Resource.Id.nuev_orden)
+
+            ///pasar cargo por el fragmento , este recibe y clasifica la activacion o desactivacion de botones 
+            ///
+            if (id == Resource.Id.nuev_orden)//Item FragmentOrden nuev_orden
             {
-                // Handle the camera action
-                nueva_orden = new Fragments_nueva_orden();
+
+                FragmentCrearOrden = new FragmentCrearOrden();
                 var transaccion = SupportFragmentManager.BeginTransaction();
-                // Reemplazamos el contenido anterior con el nuevo fragmento
-                transaccion.Replace(Resource.Id.ConteinerLayout, nueva_orden);
-                // Confirmamos la transaccion
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentCrearOrden);
                 transaccion.Commit();
             }
             else if (id == Resource.Id.reg_ord)
@@ -118,29 +187,40 @@ namespace appOrdenTecnica
             }
             else if (id == Resource.Id.asig_tecn)
             {
-                // Instanciamos el objeto
-                frgListOrdenes = new Fragments_lista_ordenes();
-                // Asignamos variable a Fragment Manager e iniciamos la transaccion
+
+                FragmentPorAsignarLista = new FragmentPorAsignarLista();
                 var transaccion = SupportFragmentManager.BeginTransaction();
-                // Le asignamos el contenedor de los fragmentos y el fragmento que cargara
-                transaccion.Replace(Resource.Id.ConteinerLayout, frgListOrdenes);
-                // Confirmamos la transaccion
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentPorAsignarLista);
                 transaccion.Commit();
             }
             else if (id == Resource.Id.ord_pend)
             {
-                // Instanciamos el objeto
-                frgListOrdenes = new Fragments_lista_ordenes();
-                // Asignamos variable a Fragment Manager e iniciamos la transaccion
+
+                FragmentAsignadosTodosLista = new FragmentAsignadosTodosLista();
                 var transaccion = SupportFragmentManager.BeginTransaction();
-                // Le asignamos el contenedor de los fragmentos y el fragmento que cargara
-                transaccion.Replace(Resource.Id.ConteinerLayout, frgListOrdenes);
-                // Confirmamos la transaccion
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentAsignadosTodosLista);
+                transaccion.Commit();
+            }
+            else if (id == Resource.Id.item_asignados)
+            {
+
+                FragmentAsignadosxTecLista = new FragmentAsignadosxTecLista();
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentAsignadosxTecLista);
+                transaccion.Commit();
+            }
+            else if (id == Resource.Id.item_culminados)
+            {
+
+                FragmentCulminadosLista = new FragmentCulminadosLista();
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentCulminadosLista);
                 transaccion.Commit();
             }
             else if (id == Resource.Id.cerr_ses)
             {
-
+                //this.MoveTaskToBack(true);
+                this.FinishAffinity();
             }
            
 

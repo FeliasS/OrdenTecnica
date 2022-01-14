@@ -17,4 +17,8 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
+	<style name="Button.Yellow" parent="AppTheme">
+		<item name="colorAccent">@color/colorYellowButton</item>
+	</style>
+
 </resources>
