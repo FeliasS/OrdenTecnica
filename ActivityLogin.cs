@@ -5,9 +5,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using appOrdenTecnica.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 
 namespace appOrdenTecnica
@@ -32,7 +35,7 @@ namespace appOrdenTecnica
             _login.Click += _login_Click;
         }
 
-        private void _login_Click(object sender, EventArgs e)
+        private async void _login_Click(object sender, EventArgs e)
         {
             string _user = _userName.Text.ToString();
             string _pass = _password.Text.ToString();
@@ -56,12 +59,98 @@ namespace appOrdenTecnica
             {
                 Console.WriteLine("campos llenos");
 
-                Usuario operador = new Usuario();
-                Usuario usuario = new Usuario();
-                usuario = operador.Tempbd(_user, _pass);
+                Usuario1 log = new Usuario1();
+                log.usuario = _user;
+                log.password = _pass;
 
-             
-                if (usuario.idUser != null) {
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://micmaproyectos.com/usuario/login");
+
+                var json = JsonConvert.SerializeObject(log);
+                var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(url, contentJson);
+
+                //Usuariobd second = new Usuariobd();
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+
+                    try
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+                        var resultado = JsonConvert.DeserializeObject<Usuariobd>(content);
+
+
+                        /*second.ID_USUARIO = resultado.ID_USUARIO;
+                        second.FK_PERFIL = resultado.FK_PERFIL;*/
+
+                        var intent = new Intent(this, typeof(MainActivity));
+
+                        ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+                        ISharedPreferencesEditor editor = prefs.Edit();
+                        editor.PutString("iduser", resultado.ID_USUARIO);
+                        editor.PutString("nomuserid", resultado.FK_EMPLEADO); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
+                        editor.PutInt("cargo", int.Parse(resultado.FK_PERFIL));
+                        editor.Apply();
+
+                        StartActivity(intent);
+                        cleanText();
+                    }
+                    catch (WebException we)
+                    {
+                        Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
+
+                    }
+
+
+
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+
+                    Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
+                }
+
+                /*try
+                {
+                    response = (HttpWebResponse)request.GetResponse();
+                    // This will have statii from 200 to 30x
+                    statusNumber = (int)response.StatusCode;
+                }
+                catch (WebException we)
+                {
+                    // Statii 400 to 50x will be here
+                    statusNumber = (int)we.Response.StatusCode;
+                }
+                */
+
+
+
+                //Usuario operador = new Usuario();
+                /*Dao operador = new Dao();
+                //Usuario usuario = new Usuario();
+
+                Task<Usuariobd> usuario = new Task<Usuariobd>();
+                usuario = operador.UsuarioDaoAsync(_user, _pass);
+
+
+                if (usuario.ID_USUARIO != null)
+                {
+
+                    var intent = new Intent(this, typeof(MainActivity));
+
+                    ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+                    ISharedPreferencesEditor editor = prefs.Edit();
+                    editor.PutString("iduser", usuario.ID_USUARIO);
+                    editor.PutInt("cargo", int.Parse(usuario.FK_PERFIL));
+                    editor.Apply();
+
+                    StartActivity(intent);
+                    cleanText();
+
+                }*/
+
+                /*if (usuario.idUser != null) {
 
                     var intent = new Intent(this, typeof(MainActivity));
 
@@ -71,18 +160,17 @@ namespace appOrdenTecnica
                     editor.PutInt("cargo", usuario.cargoUser);
                     editor.Apply();
 
-                    /*intent.PutExtra("iduser", "" + usuario.idUser);
-                    intent.PutExtra("cargo", "" + usuario.cargoUser);*/
+                    //intent.PutExtra("iduser", "" + usuario.idUser);
+                    //intent.PutExtra("cargo", "" + usuario.cargoUser);
                     //intent.PutExtra("nombrecliente", "" + );
                     StartActivity(intent);
                     cleanText();
 
+                }*/
 
-                }
 
-                
-            
-    }
+
+            }
         }
 
         // Validamos campos vacios

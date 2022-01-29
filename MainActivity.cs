@@ -50,6 +50,8 @@ namespace appOrdenTecnica
             int cargo = pref.GetInt(("cargo"), 0);
             Console.WriteLine("cargo VERRRRRRR" + cargo);
             //
+
+
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
             switch (cargo)

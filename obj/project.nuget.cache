@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "M1aV/gg3685eMVePxs1hSBbajfVlGFSS5m23IZ06kvoAVr1+HJY+GbW5SCbQJKer6SDGDKjUnaZ1tPNa764RJQ==",
+  "dgSpecHash": "JoVw+GElBkgTRR8YKwIi1CDRKmbbTx8zYtizbNRf/WjmFNNEAm+8vb+lLE1rls20SPHLZIlq2AqHNDhl0riJGw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Poaty\\source\\repos\\2117171414\\OrdenTecnica-ver4\\OrdenTecnica-master\\appOrdenTecnica.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Poaty\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Poaty\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
     "C:\\Users\\Poaty\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.activity\\1.1.0.3\\xamarin.androidx.activity.1.1.0.3.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.annotation\\1.1.0.7\\xamarin.androidx.annotation.1.1.0.7.nupkg.sha512",
