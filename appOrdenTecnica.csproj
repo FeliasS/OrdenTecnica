@@ -78,7 +78,6 @@
     <Compile Include="Fragments\FragmentTecnicosLista.cs" />
     <Compile Include="Interfaces\Ordenes_Tecnicas.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Model\Dao.cs" />
     <Compile Include="Model\OrdenTecnica.cs" />
     <Compile Include="Model\Tecnicos.cs" />
     <Compile Include="Model\Usuario.cs" />

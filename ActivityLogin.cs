@@ -72,37 +72,31 @@ namespace appOrdenTecnica
 
                 //Usuariobd second = new Usuariobd();
 
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                if (response.StatusCode == System.Net.HttpStatusCode.OK) // System.Net.HttpStatusCode.OK
                 {
-
-                    try
-                    {
                         string content = await response.Content.ReadAsStringAsync();
                         var resultado = JsonConvert.DeserializeObject<Usuariobd>(content);
 
+                        if (resultado.status == true && resultado.code == 1)
+                        {
 
-                        /*second.ID_USUARIO = resultado.ID_USUARIO;
-                        second.FK_PERFIL = resultado.FK_PERFIL;*/
+                            var intent = new Intent(this, typeof(MainActivity));
 
-                        var intent = new Intent(this, typeof(MainActivity));
+                            ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+                            ISharedPreferencesEditor editor = prefs.Edit();
+                            editor.PutString("iduser", resultado.objeto.ID_USUARIO);
+                            editor.PutString("nomuserid", resultado.objeto.FK_EMPLEADO); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
+                            editor.PutInt("cargo", int.Parse(resultado.objeto.FK_PERFIL));
+                            editor.Apply();
 
-                        ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
-                        ISharedPreferencesEditor editor = prefs.Edit();
-                        editor.PutString("iduser", resultado.ID_USUARIO);
-                        editor.PutString("nomuserid", resultado.FK_EMPLEADO); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
-                        editor.PutInt("cargo", int.Parse(resultado.FK_PERFIL));
-                        editor.Apply();
+                            StartActivity(intent);
+                            cleanText();
 
-                        StartActivity(intent);
-                        cleanText();
-                    }
-                    catch (WebException we)
-                    {
-                        Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
+                        }
+                        else if (resultado.status == true && resultado.code == 2) {
 
-                    }
-
-
+                            Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
+                        }
 
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
@@ -110,6 +104,44 @@ namespace appOrdenTecnica
 
                     Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
                 }
+                /* if (response.StatusCode == System.Net.HttpStatusCode.OK) // System.Net.HttpStatusCode.OK
+                 {
+
+                     try
+                     {
+                         string content = await response.Content.ReadAsStringAsync();
+                         var resultado = JsonConvert.DeserializeObject<Usuariobd>(content);
+
+
+                        //second.ID_USUARIO = resultado.ID_USUARIO;
+                         //second.FK_PERFIL = resultado.FK_PERFIL;
+
+                         var intent = new Intent(this, typeof(MainActivity));
+
+                         ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+                         ISharedPreferencesEditor editor = prefs.Edit();
+                         editor.PutString("iduser", resultado.ID_USUARIO);
+                         editor.PutString("nomuserid", resultado.FK_EMPLEADO); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
+                         editor.PutInt("cargo", int.Parse(resultado.FK_PERFIL));
+                         editor.Apply();
+
+                         StartActivity(intent);
+                         cleanText();
+                     }
+                     catch (WebException we)
+                     {
+                         Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
+
+                     }
+
+
+
+                 }
+                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                 {
+
+                     Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
+                 }*/
 
                 /*try
                 {

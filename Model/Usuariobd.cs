@@ -13,6 +13,25 @@ namespace appOrdenTecnica.Model
 {
     public class Usuariobd
     {
+        public bool status { get; set; }
+        public int code { get; set; }
+        public string message { get; set; }
+        public Objeto objeto { get; set; }
+
+        public Usuariobd(bool status, int code, string message, Objeto objeto)
+        {
+            this.status = status;
+            this.code = code;
+            this.message = message;
+            this.objeto = objeto;
+        }
+
+        public Usuariobd()
+        {
+        }
+    }
+    public class Objeto
+    {
 
         public string ID_USUARIO { get; set; }
         public string COD_USUARIO { get; set; }
@@ -23,11 +42,11 @@ namespace appOrdenTecnica.Model
         public string FK_PERFIL { get; set; }
         public string FK_EMPLEADO { get; set; }
 
-        public Usuariobd()
+        public Objeto()
         {
         }
 
-        public Usuariobd(string iD_USUARIO, string cOD_USUARIO, string uSUARIO, string cONTRASEÑA, string fOTO, string eSTADO, string fK_PERFIL, string fK_EMPLEADO)
+        public Objeto(string iD_USUARIO, string cOD_USUARIO, string uSUARIO, string cONTRASEÑA, string fOTO, string eSTADO, string fK_PERFIL, string fK_EMPLEADO)
         {
             ID_USUARIO = iD_USUARIO;
             COD_USUARIO = cOD_USUARIO;
@@ -39,7 +58,7 @@ namespace appOrdenTecnica.Model
             FK_EMPLEADO = fK_EMPLEADO;
         }
 
-
+        
     }
 
 
