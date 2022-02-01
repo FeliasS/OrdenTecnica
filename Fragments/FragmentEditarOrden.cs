@@ -20,10 +20,11 @@ namespace appOrdenTecnica.Fragments
 {
     public class FragmentEditarOrden : AndroidX.Fragment.App.Fragment, ListaTecnicosAdapter.OnItemListener, SearchView.IOnQueryTextListener
     {
-        // Llamando a los controles del fragmento
+        //Definimos los elementos de la vista
         EditText hora, fecha, cliente, sucursal, dispositivo, problema;
         Button agregar, generarOrden, btnAsignarTecnico;
         TextView txtTecnicoAsignado;
+
         // Llamando la clase de alert
         AlertDialog.Builder alert;
 
@@ -33,25 +34,30 @@ namespace appOrdenTecnica.Fragments
         ListaTecnicosAdapter adapter;
         TextView txtidTecnico, txtnomTecnico;
         Dialog dialog;
-        //
+
+        //FOTOS
+        TextView pathlbl;
+        String PhotoPath = "";
+        String Photo = "";
+        String alm = "";
+        
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Activity.Title = "EDITAR REPORTE";
-            // Create your fragment here
+            
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View view = inflater.Inflate(Resource.Layout.layout_nueva_orden, container, false);
 
-            //trae data del list
+            //Instanciamos los elementos del elementos de la vista
             TextView codigo = view.FindViewById<TextView>(Resource.Id.lblCodigo);
             codigo.Visibility = Android.Views.ViewStates.Visible;
             Bundle data = Arguments;
             String codValue = data.GetString("codigo");
             codigo.Text = codValue;
-            //
 
             FrameLayout layoutv_nuevaOrden2 = view.FindViewById<FrameLayout>(Resource.Id.layoutv_nuevaOrden2);
             layoutv_nuevaOrden2.Visibility = Android.Views.ViewStates.Gone;
@@ -80,18 +86,20 @@ namespace appOrdenTecnica.Fragments
             Button btnAddphotos = view.FindViewById<Button>(Resource.Id.btnAddphotos);
             pathlbl = view.FindViewById<TextView>(Resource.Id.textViewlista);//xamarin
             pathlbl.Text = "";
+
             btnTakephoto.Click += async (sender, e) =>
             {
                 await TakePhotoAsync();
                 limpiar();
 
             };
+
             btnAddphotos.Click += async (sender, e) =>
             {
                 await PickPhotoAsync();
                 limpiar();
             };
-            //
+            
             //TECNICOS
             btnAsignarTecnico.Click += (sender, e) =>
             {
@@ -113,6 +121,7 @@ namespace appOrdenTecnica.Fragments
             };
             return view;
         }
+
         private void GenerarOrden_Click(object sender, EventArgs e)
         {
             /* Aqui enviamos los datos a la interface para que valide y
@@ -132,7 +141,6 @@ namespace appOrdenTecnica.Fragments
             });
             Dialog dialog = alert.Create();
             dialog.Show();
-            // Limpiamos las cajas de texto
 
         }
 
@@ -152,7 +160,6 @@ namespace appOrdenTecnica.Fragments
             }
             else
             {
-
                 Console.WriteLine("enviando datos al servicio");
 
                 // Mostrar mensaje de que el problema ha sido agregado correctamente
@@ -164,6 +171,7 @@ namespace appOrdenTecnica.Fragments
                 });
                 Dialog dialog = alert.Create();
                 dialog.Show();
+
                 // Limpiamos las cajas de texto
                 limpiarText();
             }
@@ -191,21 +199,13 @@ namespace appOrdenTecnica.Fragments
             problema.Text = "";
         }
 
-        //FOTOS
-        TextView pathlbl;
-        String PhotoPath = "";
-        String Photo = "";
-        String alm = "";
-
         async Task TakePhotoAsync()
         {
             try
             {
-                //await CrossMedia.Current.Initialize();
                 var photo = await MediaPicker.CapturePhotoAsync();
                 await LoadPhotoAsync(photo);
                 Console.WriteLine($" Captura{PhotoPath}");
-
 
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -221,15 +221,14 @@ namespace appOrdenTecnica.Fragments
                 Console.WriteLine($"CapturePhotoAsync THREW: {ex.Message}");
             }
         }
+
         async Task PickPhotoAsync()
         {
             try
-            {
-                //await CrossMedia.Current.Initialize();
+            {             
                 var photo = await MediaPicker.PickPhotoAsync();
                 await LoadPhotoAsync(photo);
                 Console.WriteLine($"Explorer COMPLETED: {PhotoPath}");
-
 
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -273,6 +272,7 @@ namespace appOrdenTecnica.Fragments
                 Photo = photo.FileName;
             }
         }
+
         public void limpiar()
         {
 
@@ -313,6 +313,7 @@ namespace appOrdenTecnica.Fragments
             searchView.SetOnQueryTextListener(this);
 
         }
+
         public bool OnQueryTextChange(string newText)
         {
             adapter.filter(newText);

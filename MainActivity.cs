@@ -19,7 +19,7 @@ namespace appOrdenTecnica
     [Activity(Label = "@string/labelMain", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false , WindowSoftInputMode = SoftInput.StateHidden)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-        //Fragments_nueva_orden nueva_orden;
+        //Definimos los elementos
         Fragments_lista_ordenes frgListOrdenes;
         FragmentCrearOrden FragmentCrearOrden; 
         FragmentPorAsignarLista FragmentPorAsignarLista;
@@ -32,6 +32,7 @@ namespace appOrdenTecnica
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -43,14 +44,10 @@ namespace appOrdenTecnica
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
-
-            //
             ISharedPreferences pref = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
             pref.GetString(("iduser"), null);
             int cargo = pref.GetInt(("cargo"), 0);
             Console.WriteLine("cargo VERRRRRRR" + cargo);
-            //
-
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
@@ -91,20 +88,14 @@ namespace appOrdenTecnica
                     break;
 
             }
-           
-
-            
-
-            //SupportFragmentManager.BeginTransaction().Add(Resource.Id.ConteinerLayout, frgListOrdenes).Commit();
-
 
         }
+
         int counter = 0;
         public override void OnBackPressed()
         {
             int count = SupportFragmentManager.BackStackEntryCount;
-            
-            
+                
             if (count == 0)
             {
                 counter++;
@@ -118,16 +109,6 @@ namespace appOrdenTecnica
                     base.OnBackPressed();
                 }
                 
-                /*DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-                if (drawer.IsDrawerOpen(GravityCompat.Start))
-                {
-                    drawer.CloseDrawer(GravityCompat.Start);
-                }
-                else
-                {
-                    base.OnBackPressed();
-                }*/
-                //additional code
             }
             else
             {
@@ -165,9 +146,7 @@ namespace appOrdenTecnica
         {
             int id = item.ItemId;
 
-
-            ///pasar cargo por el fragmento , este recibe y clasifica la activacion o desactivacion de botones 
-            ///
+            //pasar cargo por el fragmento , este recibe y clasifica la activacion o desactivacion de botones 
             if (id == Resource.Id.nuev_orden)//Item FragmentOrden nuev_orden
             {
 
@@ -221,15 +200,14 @@ namespace appOrdenTecnica
             }
             else if (id == Resource.Id.cerr_ses)
             {
-                //this.MoveTaskToBack(true);
                 this.FinishAffinity();
             }
-           
-
+          
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

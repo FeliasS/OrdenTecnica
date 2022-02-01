@@ -22,10 +22,11 @@ namespace appOrdenTecnica.Fragments
 {
     public class FragmentCrearOrden : AndroidX.Fragment.App.Fragment , ListaTecnicosAdapter.OnItemListener, SearchView.IOnQueryTextListener
     {
-        // Llamando a los controles del fragmento
+        // Definimos los elementos de la vista
         EditText hora, fecha, cliente, sucursal, dispositivo, problema;
         Button agregar, generarOrden, btnAsignarTecnico;
         TextView txtTecnicoAsignado;
+
         // Llamando la clase de alert
         AlertDialog.Builder alert;
 
@@ -35,7 +36,7 @@ namespace appOrdenTecnica.Fragments
         ListaTecnicosAdapter adapter;
         TextView txtidTecnico, txtnomTecnico;
         Dialog dialog;
-        //
+        
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -46,20 +47,16 @@ namespace appOrdenTecnica.Fragments
         {
             View view = inflater.Inflate(Resource.Layout.layout_nueva_orden, container, false);
 
-            //Botones a eliminar
-            //Button btnAsignarTecnico = view.FindViewById<Button>(Resource.Id.btnAsignarTecnico);
-            //btnAsignarTecnico.Visibility = Android.Views.ViewStates.Gone;
             FrameLayout layoutv_nuevaOrden2 = view.FindViewById<FrameLayout>(Resource.Id.layoutv_nuevaOrden2);
             layoutv_nuevaOrden2.Visibility = Android.Views.ViewStates.Gone;
 
-             // Obteniendo lo ID de los controles
-             hora = view.FindViewById<EditText>(Resource.Id.txtHora);
+            // Instanciamos los componentes de la vista 
+            hora = view.FindViewById<EditText>(Resource.Id.txtHora);
             fecha = view.FindViewById<EditText>(Resource.Id.txtFecha);
             cliente = view.FindViewById<EditText>(Resource.Id.txtCliente);
             sucursal = view.FindViewById<EditText>(Resource.Id.txtSucursal);
             dispositivo = view.FindViewById<EditText>(Resource.Id.txtModeloDisp);
             problema = view.FindViewById<EditText>(Resource.Id.txtProblema);
-
             txtTecnicoAsignado = view.FindViewById<TextView>(Resource.Id.txtTecnicoAsignado);
 
             agregar = view.FindViewById<Button>(Resource.Id.btnAgregarLista);
@@ -69,7 +66,6 @@ namespace appOrdenTecnica.Fragments
             agregar.Click += Agregar_Click;
             generarOrden.Click += GenerarOrden_Click;
 
-           
             //TECNICOS
             btnAsignarTecnico.Click += (sender, e) =>
             {
@@ -89,7 +85,6 @@ namespace appOrdenTecnica.Fragments
                 dialog = dg.Create();
                 dialog.Show();
             };
-            //
 
             return view;
         }
@@ -113,7 +108,6 @@ namespace appOrdenTecnica.Fragments
             });
             Dialog dialog = alert.Create();
             dialog.Show();
-            // Limpiamos las cajas de texto
 
         }
 
@@ -127,13 +121,13 @@ namespace appOrdenTecnica.Fragments
             d = dispositivo.Text.ToString();
             p = problema.Text.ToString();
 
+            // Validamos los campos vacios
             if (textVacios(h, f, c, s, d, p).Equals(true))
             {
                 Toast.MakeText(Activity, "Campos vacios!, ingrese un valor", ToastLength.Short).Show();
             }
             else
             {
-
                 Console.WriteLine("enviando datos al servicio");
 
                 // Mostrar mensaje de que el problema ha sido agregado correctamente
@@ -145,6 +139,7 @@ namespace appOrdenTecnica.Fragments
                 });
                 Dialog dialog = alert.Create();
                 dialog.Show();
+
                 // Limpiamos las cajas de texto
                 limpiarText();
             }
@@ -172,8 +167,6 @@ namespace appOrdenTecnica.Fragments
             problema.Text = "";
         }
 
-      
-
         //box
         private void GenerarItem()
         {
@@ -189,10 +182,9 @@ namespace appOrdenTecnica.Fragments
 
         private void SearchListener()
         {
-
             searchView.SetOnQueryTextListener(this);
-
         }
+
         public bool OnQueryTextChange(string newText)
         {
             adapter.filter(newText);
@@ -206,19 +198,16 @@ namespace appOrdenTecnica.Fragments
 
         public void onItemClick(int position, View v)
         {
-
             txtidTecnico = v.FindViewById<TextView>(Resource.Id.txtidTecnico);
             txtnomTecnico = v.FindViewById<TextView>(Resource.Id.txtnomTecnico);
-
             
-                string idTecnico = txtidTecnico.Text.ToString().Trim();
-                string nomTecnico = txtnomTecnico.Text.ToString().Trim();
+            string idTecnico = txtidTecnico.Text.ToString().Trim();
+            string nomTecnico = txtnomTecnico.Text.ToString().Trim();
 
-                Toast.MakeText(Activity, "Tecnico Seleccionado", ToastLength.Short).Show();
-                dialog.Dismiss();
-                txtTecnicoAsignado.Text = idTecnico + "  " + nomTecnico;
+            Toast.MakeText(Activity, "Tecnico Seleccionado", ToastLength.Short).Show();
+            dialog.Dismiss();
+            txtTecnicoAsignado.Text = idTecnico + "  " + nomTecnico;
             
         }
-        //
     }
 }
