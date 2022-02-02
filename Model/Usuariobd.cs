@@ -41,12 +41,14 @@ namespace appOrdenTecnica.Model
         public string ESTADO { get; set; }
         public string FK_PERFIL { get; set; }
         public string FK_EMPLEADO { get; set; }
+        public string NOMBRES { get; set; }
+        public string APELLIDOS { get; set; }
 
         public Objeto()
         {
         }
 
-        public Objeto(string iD_USUARIO, string cOD_USUARIO, string uSUARIO, string cONTRASEÑA, string fOTO, string eSTADO, string fK_PERFIL, string fK_EMPLEADO)
+        public Objeto(string iD_USUARIO, string cOD_USUARIO, string uSUARIO, string cONTRASEÑA, string fOTO, string eSTADO, string fK_PERFIL, string fK_EMPLEADO, string nOMBRES, string aPELLIDOS)
         {
             ID_USUARIO = iD_USUARIO;
             COD_USUARIO = cOD_USUARIO;
@@ -56,9 +58,9 @@ namespace appOrdenTecnica.Model
             ESTADO = eSTADO;
             FK_PERFIL = fK_PERFIL;
             FK_EMPLEADO = fK_EMPLEADO;
+            NOMBRES = nOMBRES;
+            APELLIDOS = aPELLIDOS;
         }
-
-        
     }
 
 
