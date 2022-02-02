@@ -19,9 +19,18 @@ namespace appOrdenTecnica.Fragments
 {
     public class FragmentAsignadosTodosLista : AndroidX.Fragment.App.Fragment, ListaAsignadosTodosAdapter.OnItemListener, SearchView.IOnQueryTextListener
     {
+        //Definiendo los elementos de la vista Layout_lista_ordenes
         private SearchView searchView; //*1
         private RecyclerView recyclerview;
         private LinearLayoutManager linearLayoutManager;
+
+        ListaAsignadosTodosAdapter adapter;
+        List<OrdenTecnica> ordenes;
+
+        LinearLayout hiddenView;
+        CardView cardView;
+        TextView codigo = null;
+        String codigoValue = "";
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,42 +43,23 @@ namespace appOrdenTecnica.Fragments
             View view = inflater.Inflate(Resource.Layout.layout_lista_ordenes, container, false);
             searchView = view.FindViewById<SearchView>(Resource.Id.SearchOrden);//*2
             SearchListener();//*4
+
             recyclerview = view.FindViewById<RecyclerView>(Resource.Id.recyViewListaOrdenes);
             recyclerview.HasFixedSize = true;
+
             linearLayoutManager = new LinearLayoutManager(Activity);
             GenerarItem();
             recyclerview.SetLayoutManager(linearLayoutManager);
+
             return view;
         }
-        LinearLayout hiddenView;
-        CardView cardView;
-        TextView codigo = null;
-        String codigoValue = "";
+
         public void onItemClick(int position, View view)//*3
         {
-            /*Toast.MakeText(Activity, "Item :" + position, ToastLength.Short).Show();
             
 
-            Button testButton = view.FindViewById<Button>(Resource.Id.btnEdit);
-            testButton.Click += btn_Clicked;
-
-            codigo = view.FindViewById<TextView>(Resource.Id.txtCodigoOrden);
-            codigoValue = codigo.Text.ToString();
-
-            void btn_Clicked(object sender, EventArgs e)
-            {
-                Toast.MakeText(Activity, "here :" + position, ToastLength.Short).Show();
-                Bundle data = new Bundle(); //pasando codigo de orden
-                data.PutString("codigo", codigoValue);
-                AndroidX.Fragment.App.Fragment fragment = new FragmentPorAsignarOrden();//deberia llevar al fragmen de finalizado
-                fragment.Arguments = data;
-                Activity.SupportFragmentManager.BeginTransaction().Replace(Resource.Id.ConteinerLayout, fragment).AddToBackStack(null).Commit();
-
-            }*/
-
         }
-        ListaAsignadosTodosAdapter adapter;
-        List<OrdenTecnica> ordenes;
+
         private void GenerarItem()
         {
             ordenes = new List<OrdenTecnica>();
@@ -87,6 +77,7 @@ namespace appOrdenTecnica.Fragments
         {
             searchView.SetOnQueryTextListener(this);
         }
+
         public bool OnQueryTextChange(string newText)//cambiar texto
         {
             adapter.filter(newText);

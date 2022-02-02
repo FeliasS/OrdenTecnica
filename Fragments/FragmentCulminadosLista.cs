@@ -19,9 +19,18 @@ namespace appOrdenTecnica.Fragments
 {
     public class FragmentCulminadosLista : AndroidX.Fragment.App.Fragment, ListaAsignadosTodosAdapter.OnItemListener, SearchView.IOnQueryTextListener
     {
+        //Definimos los elementos de la vista
         private SearchView searchView; //*1
         private RecyclerView recyclerview;
         private LinearLayoutManager linearLayoutManager;
+
+        LinearLayout hiddenView;
+        CardView cardView;
+        TextView codigo = null;
+        String codigoValue = "";
+
+        ListaAsignadosTodosAdapter adapter;
+        List<OrdenTecnica> ordenes;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,10 +51,6 @@ namespace appOrdenTecnica.Fragments
             return view;
         }
 
-        LinearLayout hiddenView;
-        CardView cardView;
-        TextView codigo = null;
-        String codigoValue = "";
         public void onItemClick(int position, View view)//*3
         {
            /* Toast.MakeText(Activity, "Item :" + position, ToastLength.Short).Show();
@@ -83,8 +88,7 @@ namespace appOrdenTecnica.Fragments
             }*/
 
         }
-        ListaAsignadosTodosAdapter adapter;
-        List<OrdenTecnica> ordenes;
+
         private void GenerarItem()
         {
             ordenes = new List<OrdenTecnica>();
@@ -102,6 +106,7 @@ namespace appOrdenTecnica.Fragments
         {
             searchView.SetOnQueryTextListener(this);
         }
+
         public bool OnQueryTextChange(string newText)//cambiar texto
         {
             adapter.filter(newText);

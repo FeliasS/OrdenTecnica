@@ -18,20 +18,22 @@ namespace appOrdenTecnica
     [Activity(Label = "@string/labelLogin", MainLauncher =true)]
     public class ActivityLogin : Activity
     {
-        // obtenemos las id de los botones
+        // Definimos los elementos del Login
         EditText _userName, _password;
         Button _login;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
             // Asignamos el layout activity_login
             SetContentView(Resource.Layout.activity_login);
+
             // Obtenemos los id de los botones
             _userName = FindViewById<EditText>(Resource.Id.txtUser);
             _password = FindViewById<EditText>(Resource.Id.txtPassword);
             _login = FindViewById<Button>(Resource.Id.btnLogin);
-            // Create your application here
-
+           
             _login.Click += _login_Click;
         }
 
@@ -39,19 +41,11 @@ namespace appOrdenTecnica
         {
             string _user = _userName.Text.ToString();
             string _pass = _password.Text.ToString();
-            // Instanciamos el componente Mensaje de alerta
-            //AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
+            
             if (cajasVacias(_user, _pass).Equals(true))
             {
                 Console.WriteLine("las cajas estan vacias");
-                //alert.SetTitle("Mensaje de validacion");
-                //alert.SetMessage("Camplos Vacios, Ingrese Datos!");
-                //alert.SetPositiveButton("OK", (sender, args) =>
-                //     {
-                //     });
-                //Dialog dialog = alert.Create();
-                //dialog.Show();
+                
                 Toast.MakeText(this, "Campos vacios, Ingrese Datos!", ToastLength.Short).Show();
 
             }
@@ -63,40 +57,56 @@ namespace appOrdenTecnica
                 log.usuario = _user;
                 log.password = _pass;
 
+                // Instanciamos el servicio para consumir apis
                 HttpClient client = new HttpClient();
                 Uri url = new Uri("http://micmaproyectos.com/usuario/login");
 
+                // Serializamos los datos enviamos
                 var json = JsonConvert.SerializeObject(log);
+                
+                // Enviamos el contenido al servicio
                 var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+                
+                //Enviamos el metodo POST
                 var response = await client.PostAsync(url, contentJson);
-
-                //Usuariobd second = new Usuariobd();
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK) // System.Net.HttpStatusCode.OK
                 {
-                        string content = await response.Content.ReadAsStringAsync();
-                        var resultado = JsonConvert.DeserializeObject<Usuariobd>(content);
+                    //Hacemos lectura del contenido enviado al servicio
+                    string content = await response.Content.ReadAsStringAsync();
 
-                        if (resultado.status == true && resultado.code == 1)
-                        {
+                    //Deserializamos la trama regresada y lo pasamos a un objeto
+                    var resultado = JsonConvert.DeserializeObject<Usuariobd>(content);
 
-                            var intent = new Intent(this, typeof(MainActivity));
+                    if (resultado.status == true && resultado.code == 1)
+                    {
 
+<<<<<<< HEAD
                             ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
                             ISharedPreferencesEditor editor = prefs.Edit();
                             editor.PutString("iduser", resultado.objeto.ID_USUARIO);
                             editor.PutString("nomuserid", resultado.objeto.NOMBRES+' '+resultado.objeto.APELLIDOS); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
                             editor.PutInt("cargo", int.Parse(resultado.objeto.FK_PERFIL));
                             editor.Apply();
+=======
+                        var intent = new Intent(this, typeof(MainActivity));
+>>>>>>> 1a53c1e2f87cac90ca451d529fd1d8a133906275
 
-                            StartActivity(intent);
-                            cleanText();
+                        ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+                        ISharedPreferencesEditor editor = prefs.Edit();
+                        editor.PutString("iduser", resultado.objeto.ID_USUARIO);
+                        editor.PutString("nomuserid", resultado.objeto.FK_EMPLEADO); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
+                        editor.PutInt("cargo", int.Parse(resultado.objeto.FK_PERFIL));
+                        editor.Apply();
 
-                        }
-                        else if (resultado.status == true && resultado.code == 2) {
+                        StartActivity(intent);
+                        cleanText();
 
-                            Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
-                        }
+                    }
+                    else if (resultado.status == true && resultado.code == 2) 
+                    {
+                        Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
+                    }
 
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
@@ -104,104 +114,7 @@ namespace appOrdenTecnica
 
                     Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
                 }
-                /* if (response.StatusCode == System.Net.HttpStatusCode.OK) // System.Net.HttpStatusCode.OK
-                 {
-
-                     try
-                     {
-                         string content = await response.Content.ReadAsStringAsync();
-                         var resultado = JsonConvert.DeserializeObject<Usuariobd>(content);
-
-
-                        //second.ID_USUARIO = resultado.ID_USUARIO;
-                         //second.FK_PERFIL = resultado.FK_PERFIL;
-
-                         var intent = new Intent(this, typeof(MainActivity));
-
-                         ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
-                         ISharedPreferencesEditor editor = prefs.Edit();
-                         editor.PutString("iduser", resultado.ID_USUARIO);
-                         editor.PutString("nomuserid", resultado.FK_EMPLEADO); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
-                         editor.PutInt("cargo", int.Parse(resultado.FK_PERFIL));
-                         editor.Apply();
-
-                         StartActivity(intent);
-                         cleanText();
-                     }
-                     catch (WebException we)
-                     {
-                         Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
-
-                     }
-
-
-
-                 }
-                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-                 {
-
-                     Toast.MakeText(this, "Credenciales Incorrectas", ToastLength.Short).Show();
-                 }*/
-
-                /*try
-                {
-                    response = (HttpWebResponse)request.GetResponse();
-                    // This will have statii from 200 to 30x
-                    statusNumber = (int)response.StatusCode;
-                }
-                catch (WebException we)
-                {
-                    // Statii 400 to 50x will be here
-                    statusNumber = (int)we.Response.StatusCode;
-                }
-                */
-
-
-
-                //Usuario operador = new Usuario();
-                /*Dao operador = new Dao();
-                //Usuario usuario = new Usuario();
-
-                Task<Usuariobd> usuario = new Task<Usuariobd>();
-                usuario = operador.UsuarioDaoAsync(_user, _pass);
-
-
-                if (usuario.ID_USUARIO != null)
-                {
-
-                    var intent = new Intent(this, typeof(MainActivity));
-
-                    ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
-                    ISharedPreferencesEditor editor = prefs.Edit();
-                    editor.PutString("iduser", usuario.ID_USUARIO);
-                    editor.PutInt("cargo", int.Parse(usuario.FK_PERFIL));
-                    editor.Apply();
-
-                    StartActivity(intent);
-                    cleanText();
-
-                }*/
-
-                /*if (usuario.idUser != null) {
-
-                    var intent = new Intent(this, typeof(MainActivity));
-
-                    ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
-                    ISharedPreferencesEditor  editor = prefs.Edit();
-                    editor.PutString("iduser", usuario.idUser);
-                    editor.PutInt("cargo", usuario.cargoUser);
-                    editor.Apply();
-
-                    //intent.PutExtra("iduser", "" + usuario.idUser);
-                    //intent.PutExtra("cargo", "" + usuario.cargoUser);
-                    //intent.PutExtra("nombrecliente", "" + );
-                    StartActivity(intent);
-                    cleanText();
-
-                }*/
-
-
-
+                
             }
         }
 
@@ -220,8 +133,6 @@ namespace appOrdenTecnica
         {
             _userName.Text = "";
             _password.Text = "";
-            //_userName.Focusable = true;
-
         }
     }
 }

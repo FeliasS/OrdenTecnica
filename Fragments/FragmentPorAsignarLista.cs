@@ -19,10 +19,18 @@ namespace appOrdenTecnica.Fragments
 {
     public class FragmentPorAsignarLista : AndroidX.Fragment.App.Fragment, ListaPorAsignarAdapter.OnItemListener, SearchView.IOnQueryTextListener
     {
+        //Definimos los elementos de la vista
         private SearchView searchView; //*1
         private RecyclerView recyclerview;
         private LinearLayoutManager linearLayoutManager;
 
+        LinearLayout hiddenView;
+        CardView cardView;
+        TextView codigo = null;
+        String codigoValue = "";
+
+        ListaPorAsignarAdapter adapter;
+        List<OrdenTecnica> ordenes;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,10 +42,13 @@ namespace appOrdenTecnica.Fragments
         {
             View view = inflater.Inflate(Resource.Layout.layout_lista_ordenes, container, false);
 
+            //Instanciamos los elementos de la vista
             searchView = view.FindViewById<SearchView>(Resource.Id.SearchOrden);//*2
             SearchListener();//*4
+
             recyclerview = view.FindViewById<RecyclerView>(Resource.Id.recyViewListaOrdenes);
             recyclerview.HasFixedSize = true; 
+
             linearLayoutManager = new LinearLayoutManager(Activity);
             GenerarItem();
             recyclerview.SetLayoutManager(linearLayoutManager);
@@ -45,10 +56,6 @@ namespace appOrdenTecnica.Fragments
             return view;
         }
 
-        LinearLayout hiddenView;
-        CardView cardView;
-        TextView codigo = null;
-        String codigoValue = "";
         public void onItemClick(int position, View view)//*3
         {
             Toast.MakeText(Activity, "Item :" + position, ToastLength.Short).Show();
@@ -59,7 +66,7 @@ namespace appOrdenTecnica.Fragments
             ordenes.GetEnumerator();
             testButton.Click += btn_Clicked;
 
-            //throw new NotImplementedException();
+            // Validamos la visibilidad de asignar
             if (hiddenView.Visibility == Android.Views.ViewStates.Visible)
             {
                 TransitionManager.BeginDelayedTransition(cardView, new AutoTransition());
@@ -86,8 +93,7 @@ namespace appOrdenTecnica.Fragments
             }
 
         }
-        ListaPorAsignarAdapter adapter;
-        List<OrdenTecnica> ordenes;
+
         private void GenerarItem()
         {
             ordenes = new List<OrdenTecnica>();
@@ -105,6 +111,7 @@ namespace appOrdenTecnica.Fragments
         {
             searchView.SetOnQueryTextListener(this);
         }
+
         public bool OnQueryTextChange(string newText)//cambiar texto
         {
             adapter.filter(newText);

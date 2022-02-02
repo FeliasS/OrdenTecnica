@@ -21,6 +21,12 @@ namespace appOrdenTecnica.Fragments
 {
     public class FragmentDelTecnicoOrden : AndroidX.Fragment.App.Fragment
     {
+        //FOTOS
+        TextView pathlbl;
+        String PhotoPath = "";
+        String Photo = "";
+        String alm = "";
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,8 +37,7 @@ namespace appOrdenTecnica.Fragments
         {
             View view = inflater.Inflate(Resource.Layout.layout_nueva_orden, container, false);
 
-            //vistas modelando
-
+            //Modelando una vista con c#
             FrameLayout layoutv_nuevaOrden2 = view.FindViewById<FrameLayout>(Resource.Id.layoutv_nuevaOrden2);
             layoutv_nuevaOrden2.Visibility = Android.Views.ViewStates.Visible;
 
@@ -71,44 +76,36 @@ namespace appOrdenTecnica.Fragments
             EditText txtProblema = view.FindViewById<EditText>(Resource.Id.txtProblema);
             txtProblema.Clickable = false; txtProblema.Focusable = false; txtProblema.SetOnKeyListener(null);
             txtProblema.Background = Context.GetDrawable(Resource.Drawable.custom_input_notedit);
-            //
 
             //FOTOS
             Button btnTakephoto = view.FindViewById<Button>(Resource.Id.btnTakephoto);
             Button btnAddphotos = view.FindViewById<Button>(Resource.Id.btnAddphotos);
             pathlbl = view.FindViewById<TextView>(Resource.Id.textViewlista);//xamarin
             pathlbl.Text = "";
+
             btnTakephoto.Click += async (sender, e) =>
             {
                 await TakePhotoAsync();
                 limpiar();
 
             };
+
             btnAddphotos.Click += async (sender, e) =>
             {
                 await PickPhotoAsync();
                 limpiar();
             };
-            //
+            
             return view;
         }
-
-        //FOTOS
-        TextView pathlbl;
-        String PhotoPath = "";
-        String Photo = "";
-        String alm = "";
 
         async Task TakePhotoAsync()
         {
             try
             {
-                //await CrossMedia.Current.Initialize();
                 var photo = await MediaPicker.CapturePhotoAsync();
                 await LoadPhotoAsync(photo);
                 Console.WriteLine($" Captura{PhotoPath}");
-
-
             }
             catch (FeatureNotSupportedException fnsEx)
             {
@@ -122,16 +119,15 @@ namespace appOrdenTecnica.Fragments
             {
                 Console.WriteLine($"CapturePhotoAsync THREW: {ex.Message}");
             }
+
         }
         async Task PickPhotoAsync()
         {
             try
             {
-                //await CrossMedia.Current.Initialize();
                 var photo = await MediaPicker.PickPhotoAsync();
                 await LoadPhotoAsync(photo);
                 Console.WriteLine($"Explorer COMPLETED: {PhotoPath}");
-
 
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -175,6 +171,7 @@ namespace appOrdenTecnica.Fragments
                 Photo = photo.FileName;
             }
         }
+
         public void limpiar()
         {
 

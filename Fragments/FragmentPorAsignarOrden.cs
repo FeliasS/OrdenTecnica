@@ -17,8 +17,11 @@ namespace appOrdenTecnica.Fragments
 {
     public class FragmentPorAsignarOrden : AndroidX.Fragment.App.Fragment, ListaTecnicosAdapter.OnItemListener, SearchView.IOnQueryTextListener
     {
+        //Definimos los elementos de la vista
+
         // Llamando la clase de alert
         AlertDialog.Builder alert;
+
         //box
         private SearchView searchView;
         private RecyclerView recyclerview;
@@ -27,7 +30,7 @@ namespace appOrdenTecnica.Fragments
         Dialog dialog;
         Button btnAsignarTecnico;
         TextView txtTecnicoAsignado;
-        //
+        
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -41,18 +44,20 @@ namespace appOrdenTecnica.Fragments
             TextView codigo = view.FindViewById<TextView>(Resource.Id.lblCodigo);
             codigo.Visibility = Android.Views.ViewStates.Visible;
 
-
             Bundle data = Arguments;
             String codValue = data.GetString("codigo");
             codigo.Text = codValue;
-            //vistas modelando
 
+            //Modelando las vistas
             FrameLayout layoutv_nuevaOrden2 = view.FindViewById<FrameLayout>(Resource.Id.layoutv_nuevaOrden2);
             layoutv_nuevaOrden2.Visibility = Android.Views.ViewStates.Gone;
+
             Button btnAgregarLista = view.FindViewById<Button>(Resource.Id.btnAgregarLista);
             btnAgregarLista.Visibility = Android.Views.ViewStates.Gone;
+
             Button btnGenerarOrden = view.FindViewById<Button>(Resource.Id.btnGenerarOrden);
             btnGenerarOrden.Text = "GUARDAR CAMBIOS";
+
             LinearLayout part1 = view.FindViewById<LinearLayout>(Resource.Id.part1);
             part1.Background = Context.GetDrawable(Resource.Drawable.custom_input_notedit);
 
@@ -79,10 +84,10 @@ namespace appOrdenTecnica.Fragments
             EditText txtProblema = view.FindViewById<EditText>(Resource.Id.txtProblema);
             txtProblema.Clickable = false; txtProblema.Focusable = false; txtProblema.SetOnKeyListener(null);
             txtProblema.Background = Context.GetDrawable(Resource.Drawable.custom_input_notedit);
-            //
 
             btnAsignarTecnico = view.FindViewById<Button>(Resource.Id.btnAsignarTecnico);
             txtTecnicoAsignado = view.FindViewById<TextView>(Resource.Id.txtTecnicoAsignado);
+
             //TECNICOS
             btnAsignarTecnico.Click += (sender, e) =>
             {
@@ -105,7 +110,6 @@ namespace appOrdenTecnica.Fragments
             return view;
         }
        
-
         private void GenerarOrden_Click(object sender, EventArgs e)
         {
             /* Aqui enviamos los datos a la interface para que valide y
@@ -127,6 +131,7 @@ namespace appOrdenTecnica.Fragments
             // Limpiamos las cajas de texto
 
         }
+
         //box
         private void GenerarItem()
         {
@@ -146,6 +151,7 @@ namespace appOrdenTecnica.Fragments
             searchView.SetOnQueryTextListener(this);
 
         }
+
         public bool OnQueryTextChange(string newText)
         {
             adapter.filter(newText);
@@ -162,7 +168,6 @@ namespace appOrdenTecnica.Fragments
 
             txtidTecnico = v.FindViewById<TextView>(Resource.Id.txtidTecnico);
             txtnomTecnico = v.FindViewById<TextView>(Resource.Id.txtnomTecnico);
-
 
             string idTecnico = txtidTecnico.Text.ToString().Trim();
             string nomTecnico = txtnomTecnico.Text.ToString().Trim();

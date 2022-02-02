@@ -19,9 +19,18 @@ namespace appOrdenTecnica.Fragments
 {
     public class FragmentAsignadosxTecLista : AndroidX.Fragment.App.Fragment, ListaAsignadosTodosAdapter.OnItemListener, SearchView.IOnQueryTextListener
     {
+        // Definimos los elementos de la vista
         private SearchView searchView; //*1
         private RecyclerView recyclerview;
         private LinearLayoutManager linearLayoutManager;
+
+        LinearLayout hiddenView;
+        CardView cardView;
+        TextView codigo = null;
+        String codigoValue = "";
+
+        ListaAsignadosTodosAdapter adapter;
+        List<OrdenTecnica> ordenes;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,8 +43,10 @@ namespace appOrdenTecnica.Fragments
             View view = inflater.Inflate(Resource.Layout.layout_lista_ordenes, container, false);
             searchView = view.FindViewById<SearchView>(Resource.Id.SearchOrden);//*2
             SearchListener();//*4
+
             recyclerview = view.FindViewById<RecyclerView>(Resource.Id.recyViewListaOrdenes);
             recyclerview.HasFixedSize = true;
+
             linearLayoutManager = new LinearLayoutManager(Activity);
             GenerarItem();
             recyclerview.SetLayoutManager(linearLayoutManager);
@@ -43,13 +54,10 @@ namespace appOrdenTecnica.Fragments
             return view;
         }
 
-        LinearLayout hiddenView;
-        CardView cardView;
-        TextView codigo = null;
-        String codigoValue = "";
         public void onItemClick(int position, View view)//*3
         {
             Toast.MakeText(Activity, "Item :" + position, ToastLength.Short).Show();
+
             hiddenView = view.FindViewById<LinearLayout>(Resource.Id.hidden_view);
             cardView = view.FindViewById<CardView>(Resource.Id.base_cardview);
 
@@ -57,7 +65,7 @@ namespace appOrdenTecnica.Fragments
             ordenes.GetEnumerator();
             testButton.Click += btn_Clicked;
 
-            //throw new NotImplementedException();
+            // Validamos si las opciones de Editar y Asignar estan visibles
             if (hiddenView.Visibility == Android.Views.ViewStates.Visible)
             {
                 TransitionManager.BeginDelayedTransition(cardView, new AutoTransition());
@@ -84,8 +92,6 @@ namespace appOrdenTecnica.Fragments
             }
 
         }
-        ListaAsignadosTodosAdapter adapter;
-        List<OrdenTecnica> ordenes;
         private void GenerarItem()
         {
             ordenes = new List<OrdenTecnica>();
@@ -103,6 +109,7 @@ namespace appOrdenTecnica.Fragments
         {
             searchView.SetOnQueryTextListener(this);
         }
+
         public bool OnQueryTextChange(string newText)//cambiar texto
         {
             adapter.filter(newText);

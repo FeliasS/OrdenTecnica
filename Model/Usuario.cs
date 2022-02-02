@@ -30,6 +30,7 @@ namespace appOrdenTecnica.Model
             this.cargoUser = cargoUser;
             this.passwordUser = passwordUser;
         }
+
         int perm=0;
         public Usuario Tempbd(string _user, string _pass) {
 
@@ -38,35 +39,16 @@ namespace appOrdenTecnica.Model
             objUsu.Add(new Usuario() { idUser = "U02", nomUser = "Lopez5", cargoUser = 2 , passwordUser = "123" }); //2 = supervisor tecnico;
             objUsu.Add(new Usuario() { idUser = "U03", nomUser = "Juan08", cargoUser = 3 , passwordUser = "123" }); //3 = tecnico;
 
-            /*foreach (Usuario aPart in objUsu)
-            {
-                Console.WriteLine(aPart);
-            }*/
-
             List<Usuario> newlist = objUsu.Where(x => x.nomUser.Equals(_user)).ToList(); //StartsWith, Contains
             Usuario obj = new Usuario();
             foreach (Usuario aPart in newlist)
             {
-                //Console.WriteLine(aPart);
-                //Console.WriteLine("aquiiii" + aPart.cargoUser);
                 obj.idUser = aPart.idUser;
                 obj.cargoUser = aPart.cargoUser;
             }
             perm = newlist.Count;
 
-            /*Console.WriteLine("\nCapacity: {0}", objUsu.Capacity);
-            Console.WriteLine("Count: {0}", objUsu.Count);
-
-            
-            //Console.WriteLine(newlist[1].ToString()+ Integer.ParseInt(newlist[2].ToString()));
-            //obj.idUser = newlist[0].ToString();
-            obj.idUser = newlist.ElementAt(0).ToString();
-            Console.WriteLine("aquiiii" + newlist.ElementAt(0).ToString());
-            
-            obj.cargoUser = Integer.ParseInt(newlist.ElementAt(2).ToString());
-            return obj;*/
             return obj;
-
 
         }
 
