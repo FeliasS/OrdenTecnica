@@ -12,6 +12,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using Xamarin.Essentials;
 
 namespace appOrdenTecnica
 {
@@ -21,6 +22,9 @@ namespace appOrdenTecnica
         // Definimos los elementos del Login
         EditText _userName, _password;
         Button _login;
+
+        //Cuadro de dialogo
+        AlertDialog.Builder alert;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,6 +39,32 @@ namespace appOrdenTecnica
             _login = FindViewById<Button>(Resource.Id.btnLogin);
            
             _login.Click += _login_Click;
+
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+        }
+
+        private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            //Validamos si la app esta conectado a internet
+            if (Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            {
+                alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Mensaje");
+                alert.SetMessage("Se ha perdido la conexion a internet");
+                alert.SetNeutralButton("ACEPTAR", (sender, args) => 
+                { 
+                    
+                });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+                return;
+            }
+            else
+            {
+                Toast.MakeText(this, "Conexion a Internet Exitosa", ToastLength.Short).Show();
+                Console.WriteLine("usted tiene internet");
+
+            }
         }
 
         private async void _login_Click(object sender, EventArgs e)

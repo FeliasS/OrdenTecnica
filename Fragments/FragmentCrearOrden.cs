@@ -23,9 +23,12 @@ namespace appOrdenTecnica.Fragments
     public class FragmentCrearOrden : AndroidX.Fragment.App.Fragment , ListaTecnicosAdapter.OnItemListener, SearchView.IOnQueryTextListener
     {
         // Definimos los elementos de la vista
-        EditText hora, fecha, cliente, sucursal, dispositivo, problema;
+        EditText hora, fecha,  problema;
         Button agregar, generarOrden, btnAsignarTecnico;
         TextView txtTecnicoAsignado;
+
+        //Autocomplete
+        AutoCompleteTextView txtCliente, txtSucursal, txtDispositivo;
 
         // Llamando la clase de alert
         AlertDialog.Builder alert;
@@ -53,9 +56,34 @@ namespace appOrdenTecnica.Fragments
             // Instanciamos los componentes de la vista 
             hora = view.FindViewById<EditText>(Resource.Id.txtHora);
             fecha = view.FindViewById<EditText>(Resource.Id.txtFecha);
-            cliente = view.FindViewById<EditText>(Resource.Id.txtCliente);
-            sucursal = view.FindViewById<EditText>(Resource.Id.txtSucursal);
-            dispositivo = view.FindViewById<EditText>(Resource.Id.txtModeloDisp);
+
+            // Instancialos los autocompleteView de la vista
+            txtCliente = view.FindViewById<AutoCompleteTextView>(Resource.Id.txtCliente);
+            txtSucursal = view.FindViewById<AutoCompleteTextView>(Resource.Id.txtSucursal);
+            txtDispositivo = view.FindViewById<AutoCompleteTextView>(Resource.Id.txtModeloDisp);
+
+            //Asignando la hora y fecha 
+            fecha.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            hora.Text = DateTime.Now.ToString("hh:mm tt");
+
+            // Llenamos los autoComplete con datos 
+            //Cliente
+            String[] cliente = Resources.GetStringArray(Resource.Array.array_cliente);
+            var array_cliente = new ArrayAdapter<string>(Activity, Resource.Layout.ac_itemList, cliente);
+
+            //Sucursal
+            String[] sucursal = Resources.GetStringArray(Resource.Array.array_sucursal);
+            var array_sucursal = new ArrayAdapter<string>(Activity, Resource.Layout.ac_itemList, sucursal);
+
+            //Dispositivo
+            String[] dispositivo = Resources.GetStringArray(Resource.Array.array_dispositivo);
+            var array_dispositivo = new ArrayAdapter<string>(Activity,Resource.Layout.ac_itemList, dispositivo);
+
+            // Asignando el array al autoComplete
+            txtCliente.Adapter = array_cliente;
+            txtSucursal.Adapter = array_sucursal;
+            txtDispositivo.Adapter = array_dispositivo;
+
             problema = view.FindViewById<EditText>(Resource.Id.txtProblema);
             txtTecnicoAsignado = view.FindViewById<TextView>(Resource.Id.txtTecnicoAsignado);
 
@@ -116,9 +144,9 @@ namespace appOrdenTecnica.Fragments
             string h, f, c, s, d, p;
             h = hora.Text.ToString();
             f = fecha.Text.ToString();
-            c = cliente.Text.ToString();
-            s = sucursal.Text.ToString();
-            d = dispositivo.Text.ToString();
+            c = txtCliente.Text.ToString();
+            s = txtSucursal.Text.ToString();
+            d = txtDispositivo.Text.ToString();
             p = problema.Text.ToString();
 
             // Validamos los campos vacios
@@ -161,9 +189,9 @@ namespace appOrdenTecnica.Fragments
         {
             fecha.Text = "";
             hora.Text = "";
-            cliente.Text = "";
-            sucursal.Text = "";
-            dispositivo.Text = "";
+            txtCliente.Text = "";
+            txtSucursal.Text = "";
+            txtDispositivo.Text = "";
             problema.Text = "";
         }
 

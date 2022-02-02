@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uQ033RwN8dJhm1LwGMCT0K3p/Uj8zjj89/xS31Ig/bqsO6a+hhCxKNUd95/bof38cvuLi0Hnrn0VRFx+FGPcGQ==",
+  "dgSpecHash": "QZp/tC/KtO0xQLxpQ7qJtoaIq6U3aJCZNsQyVlgSIyabbasnKZllf2IVy/8I5NdTC5y2l4QLiMqgVmO/ZZFX2w==",
   "success": true,
-  "projectFilePath": "D:\\Repos\\Xamarin\\Chang\\OrdenTecnica\\appOrdenTecnica.csproj",
+  "projectFilePath": "D:\\Repos\\Xamarin\\Chang\\OrdTecnica-master\\OrdenTecnica\\appOrdenTecnica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zink_\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\zink_\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",

@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivityLogin.cs" />
+    <Compile Include="Adapter\Ac_item.cs" />
     <Compile Include="Adapter\ListaAsignadosTodosAdapter.cs" />
     <Compile Include="Adapter\ListaOrdenAdapter.cs" />
     <Compile Include="Adapter\ListaPorAsignarAdapter.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Fragments\FragmentTecnicosLista.cs" />
     <Compile Include="Interfaces\Ordenes_Tecnicas.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\OrdenTecnica.cs" />
     <Compile Include="Model\Tecnicos.cs" />
     <Compile Include="Model\Usuario.cs" />
@@ -222,6 +224,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\layout_nueva_orden2.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ac_itemList.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

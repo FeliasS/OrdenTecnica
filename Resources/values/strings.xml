@@ -10,4 +10,38 @@
 	
 	<string name="labelLogin">LOGIN</string>
 	<string name="labelMain">SISTEMA DE ORDENES</string>
+
+	<!--Cadena de datos para Cliente-->
+	<string-array name="array_cliente">
+		<item>Alberto</item>
+		<item>Nicolas</item>
+		<item>Paola</item>
+		<item>Geraldine</item>
+		<item>Karl</item>
+		<item>Yemil</item>
+		<item>Renzo</item>
+	</string-array>
+
+	<!--Cadena de datos para Sucursal-->
+	<string-array name="array_sucursal">
+		<item>Ate</item>
+		<item>San Juan de lurigancho</item>
+		<item>San Martin de porras</item>
+		<item>San luis</item>
+		<item>Surco</item>
+		<item>Miraflores</item>
+		<item>Cajamarquilla</item>
+	</string-array>
+
+	<!--Cadena de datos para Dispositivo-->
+	<string-array name="array_dispositivo">
+		<item>mk_100</item>
+		<item>mj-550</item>
+		<item>Camara Termica</item>
+		<item>Video Grabadora</item>
+		<item>mg-101</item>
+		<item>Sensor de Movimiento</item>
+		<item>Sensor de Calor</item>
+	</string-array>
+	
 </resources>

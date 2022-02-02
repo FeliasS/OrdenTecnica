@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repos\\Xamarin\\Chang\\OrdenTecnica\\appOrdenTecnica.csproj": {}
+    "D:\\Repos\\Xamarin\\Chang\\OrdTecnica-master\\OrdenTecnica\\appOrdenTecnica.csproj": {}
   },
   "projects": {
-    "D:\\Repos\\Xamarin\\Chang\\OrdenTecnica\\appOrdenTecnica.csproj": {
+    "D:\\Repos\\Xamarin\\Chang\\OrdTecnica-master\\OrdenTecnica\\appOrdenTecnica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repos\\Xamarin\\Chang\\OrdenTecnica\\appOrdenTecnica.csproj",
+        "projectUniqueName": "D:\\Repos\\Xamarin\\Chang\\OrdTecnica-master\\OrdenTecnica\\appOrdenTecnica.csproj",
         "projectName": "appOrdenTecnica",
-        "projectPath": "D:\\Repos\\Xamarin\\Chang\\OrdenTecnica\\appOrdenTecnica.csproj",
+        "projectPath": "D:\\Repos\\Xamarin\\Chang\\OrdTecnica-master\\OrdenTecnica\\appOrdenTecnica.csproj",
         "packagesPath": "C:\\Users\\zink_\\.nuget\\packages\\",
-        "outputPath": "D:\\Repos\\Xamarin\\Chang\\OrdenTecnica\\obj\\",
+        "outputPath": "D:\\Repos\\Xamarin\\Chang\\OrdTecnica-master\\OrdenTecnica\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
