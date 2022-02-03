@@ -25,6 +25,196 @@ namespace appOrdenTecnica
 		
 		public static void UpdateIdValues()
 		{
+			global::Xamarin.Essentials.Resource.Attribute.alpha = global::appOrdenTecnica.Resource.Attribute.alpha;
+			global::Xamarin.Essentials.Resource.Attribute.font = global::appOrdenTecnica.Resource.Attribute.font;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::appOrdenTecnica.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderCerts = global::appOrdenTecnica.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderFetchStrategy = global::appOrdenTecnica.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderFetchTimeout = global::appOrdenTecnica.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderPackage = global::appOrdenTecnica.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderQuery = global::appOrdenTecnica.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Essentials.Resource.Attribute.fontStyle = global::appOrdenTecnica.Resource.Attribute.fontStyle;
+			global::Xamarin.Essentials.Resource.Attribute.fontVariationSettings = global::appOrdenTecnica.Resource.Attribute.fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Attribute.fontWeight = global::appOrdenTecnica.Resource.Attribute.fontWeight;
+			global::Xamarin.Essentials.Resource.Attribute.ttcIndex = global::appOrdenTecnica.Resource.Attribute.ttcIndex;
+			global::Xamarin.Essentials.Resource.Color.androidx_core_ripple_material_light = global::appOrdenTecnica.Resource.Color.androidx_core_ripple_material_light;
+			global::Xamarin.Essentials.Resource.Color.androidx_core_secondary_text_default_material_light = global::appOrdenTecnica.Resource.Color.androidx_core_secondary_text_default_material_light;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_bg_grey = global::appOrdenTecnica.Resource.Color.browser_actions_bg_grey;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_divider_color = global::appOrdenTecnica.Resource.Color.browser_actions_divider_color;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_text_color = global::appOrdenTecnica.Resource.Color.browser_actions_text_color;
+			global::Xamarin.Essentials.Resource.Color.browser_actions_title_color = global::appOrdenTecnica.Resource.Color.browser_actions_title_color;
+			global::Xamarin.Essentials.Resource.Color.notification_action_color_filter = global::appOrdenTecnica.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Essentials.Resource.Color.notification_icon_bg_color = global::appOrdenTecnica.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_max_width = global::appOrdenTecnica.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_min_padding = global::appOrdenTecnica.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_horizontal_material = global::appOrdenTecnica.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_vertical_material = global::appOrdenTecnica.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_padding_horizontal_material = global::appOrdenTecnica.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_padding_vertical_material = global::appOrdenTecnica.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_control_corner_material = global::appOrdenTecnica.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_notification_large_icon_max_height = global::appOrdenTecnica.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Xamarin.Essentials.Resource.Dimension.compat_notification_large_icon_max_width = global::appOrdenTecnica.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.Essentials.Resource.Dimension.notification_action_icon_size = global::appOrdenTecnica.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_action_text_size = global::appOrdenTecnica.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_big_circle_margin = global::appOrdenTecnica.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Essentials.Resource.Dimension.notification_content_margin_start = global::appOrdenTecnica.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Essentials.Resource.Dimension.notification_large_icon_height = global::appOrdenTecnica.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Essentials.Resource.Dimension.notification_large_icon_width = global::appOrdenTecnica.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Essentials.Resource.Dimension.notification_main_column_padding_top = global::appOrdenTecnica.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Essentials.Resource.Dimension.notification_media_narrow_margin = global::appOrdenTecnica.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Essentials.Resource.Dimension.notification_right_icon_size = global::appOrdenTecnica.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_right_side_padding_top = global::appOrdenTecnica.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Essentials.Resource.Dimension.notification_small_icon_background_padding = global::appOrdenTecnica.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Essentials.Resource.Dimension.notification_small_icon_size_as_large = global::appOrdenTecnica.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Essentials.Resource.Dimension.notification_subtext_size = global::appOrdenTecnica.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_top_pad = global::appOrdenTecnica.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Essentials.Resource.Dimension.notification_top_pad_large_text = global::appOrdenTecnica.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Essentials.Resource.Drawable.notification_action_background = global::appOrdenTecnica.Resource.Drawable.notification_action_background;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg = global::appOrdenTecnica.Resource.Drawable.notification_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low = global::appOrdenTecnica.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low_normal = global::appOrdenTecnica.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low_pressed = global::appOrdenTecnica.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_normal = global::appOrdenTecnica.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_normal_pressed = global::appOrdenTecnica.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Essentials.Resource.Drawable.notification_icon_background = global::appOrdenTecnica.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_bg = global::appOrdenTecnica.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_low_bg = global::appOrdenTecnica.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_tile_bg = global::appOrdenTecnica.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notify_panel_notification_icon_bg = global::appOrdenTecnica.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Essentials.Resource.Id.accessibility_action_clickable_span = global::appOrdenTecnica.Resource.Id.accessibility_action_clickable_span;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_0 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_0;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_1 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_1;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_10 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_10;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_11 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_11;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_12 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_12;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_13 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_13;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_14 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_14;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_15 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_15;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_16 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_16;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_17 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_17;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_18 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_18;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_19 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_19;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_2 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_2;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_20 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_20;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_21 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_21;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_22 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_22;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_23 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_23;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_24 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_24;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_25 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_25;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_26 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_26;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_27 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_27;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_28 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_28;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_29 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_29;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_3 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_3;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_30 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_30;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_31 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_31;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_4 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_4;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_5 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_5;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_6 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_6;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_7 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_7;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_8 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_8;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_9 = global::appOrdenTecnica.Resource.Id.accessibility_custom_action_9;
+			global::Xamarin.Essentials.Resource.Id.actions = global::appOrdenTecnica.Resource.Id.actions;
+			global::Xamarin.Essentials.Resource.Id.action_container = global::appOrdenTecnica.Resource.Id.action_container;
+			global::Xamarin.Essentials.Resource.Id.action_divider = global::appOrdenTecnica.Resource.Id.action_divider;
+			global::Xamarin.Essentials.Resource.Id.action_image = global::appOrdenTecnica.Resource.Id.action_image;
+			global::Xamarin.Essentials.Resource.Id.action_text = global::appOrdenTecnica.Resource.Id.action_text;
+			global::Xamarin.Essentials.Resource.Id.async = global::appOrdenTecnica.Resource.Id.async;
+			global::Xamarin.Essentials.Resource.Id.blocking = global::appOrdenTecnica.Resource.Id.blocking;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_header_text = global::appOrdenTecnica.Resource.Id.browser_actions_header_text;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::appOrdenTecnica.Resource.Id.browser_actions_menu_items;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_icon = global::appOrdenTecnica.Resource.Id.browser_actions_menu_item_icon;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_text = global::appOrdenTecnica.Resource.Id.browser_actions_menu_item_text;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_view = global::appOrdenTecnica.Resource.Id.browser_actions_menu_view;
+			global::Xamarin.Essentials.Resource.Id.chronometer = global::appOrdenTecnica.Resource.Id.chronometer;
+			global::Xamarin.Essentials.Resource.Id.dialog_button = global::appOrdenTecnica.Resource.Id.dialog_button;
+			global::Xamarin.Essentials.Resource.Id.forever = global::appOrdenTecnica.Resource.Id.forever;
+			global::Xamarin.Essentials.Resource.Id.icon = global::appOrdenTecnica.Resource.Id.icon;
+			global::Xamarin.Essentials.Resource.Id.icon_group = global::appOrdenTecnica.Resource.Id.icon_group;
+			global::Xamarin.Essentials.Resource.Id.info = global::appOrdenTecnica.Resource.Id.info;
+			global::Xamarin.Essentials.Resource.Id.italic = global::appOrdenTecnica.Resource.Id.italic;
+			global::Xamarin.Essentials.Resource.Id.line1 = global::appOrdenTecnica.Resource.Id.line1;
+			global::Xamarin.Essentials.Resource.Id.line3 = global::appOrdenTecnica.Resource.Id.line3;
+			global::Xamarin.Essentials.Resource.Id.normal = global::appOrdenTecnica.Resource.Id.normal;
+			global::Xamarin.Essentials.Resource.Id.notification_background = global::appOrdenTecnica.Resource.Id.notification_background;
+			global::Xamarin.Essentials.Resource.Id.notification_main_column = global::appOrdenTecnica.Resource.Id.notification_main_column;
+			global::Xamarin.Essentials.Resource.Id.notification_main_column_container = global::appOrdenTecnica.Resource.Id.notification_main_column_container;
+			global::Xamarin.Essentials.Resource.Id.right_icon = global::appOrdenTecnica.Resource.Id.right_icon;
+			global::Xamarin.Essentials.Resource.Id.right_side = global::appOrdenTecnica.Resource.Id.right_side;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_actions = global::appOrdenTecnica.Resource.Id.tag_accessibility_actions;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_clickable_spans = global::appOrdenTecnica.Resource.Id.tag_accessibility_clickable_spans;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_heading = global::appOrdenTecnica.Resource.Id.tag_accessibility_heading;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_pane_title = global::appOrdenTecnica.Resource.Id.tag_accessibility_pane_title;
+			global::Xamarin.Essentials.Resource.Id.tag_screen_reader_focusable = global::appOrdenTecnica.Resource.Id.tag_screen_reader_focusable;
+			global::Xamarin.Essentials.Resource.Id.tag_transition_group = global::appOrdenTecnica.Resource.Id.tag_transition_group;
+			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_event_manager = global::appOrdenTecnica.Resource.Id.tag_unhandled_key_event_manager;
+			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_listeners = global::appOrdenTecnica.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.Essentials.Resource.Id.text = global::appOrdenTecnica.Resource.Id.text;
+			global::Xamarin.Essentials.Resource.Id.text2 = global::appOrdenTecnica.Resource.Id.text2;
+			global::Xamarin.Essentials.Resource.Id.time = global::appOrdenTecnica.Resource.Id.time;
+			global::Xamarin.Essentials.Resource.Id.title = global::appOrdenTecnica.Resource.Id.title;
+			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::appOrdenTecnica.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::appOrdenTecnica.Resource.Layout.browser_actions_context_menu_page;
+			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::appOrdenTecnica.Resource.Layout.browser_actions_context_menu_row;
+			global::Xamarin.Essentials.Resource.Layout.custom_dialog = global::appOrdenTecnica.Resource.Layout.custom_dialog;
+			global::Xamarin.Essentials.Resource.Layout.notification_action = global::appOrdenTecnica.Resource.Layout.notification_action;
+			global::Xamarin.Essentials.Resource.Layout.notification_action_tombstone = global::appOrdenTecnica.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_custom_big = global::appOrdenTecnica.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_icon_group = global::appOrdenTecnica.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_part_chronometer = global::appOrdenTecnica.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_part_time = global::appOrdenTecnica.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Essentials.Resource.String.copy_toast_msg = global::appOrdenTecnica.Resource.String.copy_toast_msg;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_copy_link = global::appOrdenTecnica.Resource.String.fallback_menu_item_copy_link;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_open_in_browser = global::appOrdenTecnica.Resource.String.fallback_menu_item_open_in_browser;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_share_link = global::appOrdenTecnica.Resource.String.fallback_menu_item_share_link;
+			global::Xamarin.Essentials.Resource.String.status_bar_notification_info_overflow = global::appOrdenTecnica.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification = global::appOrdenTecnica.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Info = global::appOrdenTecnica.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::appOrdenTecnica.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Time = global::appOrdenTecnica.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Title = global::appOrdenTecnica.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::appOrdenTecnica.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::appOrdenTecnica.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem = global::appOrdenTecnica.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_alpha = global::appOrdenTecnica.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_alpha = global::appOrdenTecnica.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_color = global::appOrdenTecnica.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::appOrdenTecnica.Resource.Styleable.FontFamily;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontStyle = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontWeight = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_font = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontStyle = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontWeight = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_ttcIndex = global::appOrdenTecnica.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderAuthority = global::appOrdenTecnica.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderCerts = global::appOrdenTecnica.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::appOrdenTecnica.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::appOrdenTecnica.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderPackage = global::appOrdenTecnica.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderQuery = global::appOrdenTecnica.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor = global::appOrdenTecnica.Resource.Styleable.GradientColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::appOrdenTecnica.Resource.Styleable.GradientColorItem;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::appOrdenTecnica.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::appOrdenTecnica.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerColor = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_centerColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerX = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_centerX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerY = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_centerY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endColor = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_endColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endX = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_endX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_endY = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_endY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_gradientRadius = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startColor = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_startColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startX = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_startX;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startY = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_startY;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_tileMode = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_tileMode;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_type = global::appOrdenTecnica.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Essentials.Resource.Xml.image_share_filepaths = global::appOrdenTecnica.Resource.Xml.image_share_filepaths;
+			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::appOrdenTecnica.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 		}
 		
 		public partial class Animation
@@ -3127,154 +3317,160 @@ namespace appOrdenTecnica
 			public const int custom_input_v1 = 2131165287;
 			
 			// aapt resource value: 0x7F070068
-			public const int design_bottom_navigation_item_background = 2131165288;
+			public const int custom_profile = 2131165288;
 			
 			// aapt resource value: 0x7F070069
-			public const int design_fab_background = 2131165289;
+			public const int design_bottom_navigation_item_background = 2131165289;
 			
 			// aapt resource value: 0x7F07006A
-			public const int design_ic_visibility = 2131165290;
+			public const int design_fab_background = 2131165290;
 			
 			// aapt resource value: 0x7F07006B
-			public const int design_ic_visibility_off = 2131165291;
+			public const int design_ic_visibility = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int design_password_eye = 2131165292;
+			public const int design_ic_visibility_off = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
-			public const int design_snackbar_background = 2131165293;
-			
-			// aapt resource value: 0x7F07007E
-			public const int icons8_agregar = 2131165310;
-			
-			// aapt resource value: 0x7F07007F
-			public const int icons8_agregar_enlace = 2131165311;
-			
-			// aapt resource value: 0x7F070080
-			public const int icons8_anadir_imagen = 2131165312;
-			
-			// aapt resource value: 0x7F070081
-			public const int icons8_check = 2131165313;
-			
-			// aapt resource value: 0x7F070082
-			public const int icons8_guardar = 2131165314;
-			
-			// aapt resource value: 0x7F070083
-			public const int icons8_luna = 2131165315;
-			
-			// aapt resource value: 0x7F070084
-			public const int icons8_sol = 2131165316;
-			
-			// aapt resource value: 0x7F070085
-			public const int icons8_worker = 2131165317;
+			public const int design_password_eye = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int ic_logo_ot = 2131165294;
+			public const int design_snackbar_background = 2131165294;
 			
-			// aapt resource value: 0x7F07006F
-			public const int ic_menu_alerta = 2131165295;
+			// aapt resource value: 0x7F07007F
+			public const int icons8_agregar = 2131165311;
 			
-			// aapt resource value: 0x7F070070
-			public const int ic_menu_asignados = 2131165296;
+			// aapt resource value: 0x7F070080
+			public const int icons8_agregar_enlace = 2131165312;
 			
-			// aapt resource value: 0x7F070071
-			public const int ic_menu_camera = 2131165297;
+			// aapt resource value: 0x7F070081
+			public const int icons8_anadir_imagen = 2131165313;
 			
-			// aapt resource value: 0x7F070072
-			public const int ic_menu_cargar = 2131165298;
+			// aapt resource value: 0x7F070082
+			public const int icons8_check = 2131165314;
 			
-			// aapt resource value: 0x7F070073
-			public const int ic_menu_culminados = 2131165299;
+			// aapt resource value: 0x7F070083
+			public const int icons8_guardar = 2131165315;
 			
-			// aapt resource value: 0x7F070074
-			public const int ic_menu_gallery = 2131165300;
+			// aapt resource value: 0x7F070084
+			public const int icons8_luna = 2131165316;
 			
-			// aapt resource value: 0x7F070075
-			public const int ic_menu_lista = 2131165301;
-			
-			// aapt resource value: 0x7F070076
-			public const int ic_menu_manage = 2131165302;
-			
-			// aapt resource value: 0x7F070077
-			public const int ic_menu_new = 2131165303;
-			
-			// aapt resource value: 0x7F070078
-			public const int ic_menu_send = 2131165304;
-			
-			// aapt resource value: 0x7F070079
-			public const int ic_menu_share = 2131165305;
-			
-			// aapt resource value: 0x7F07007A
-			public const int ic_menu_slideshow = 2131165306;
-			
-			// aapt resource value: 0x7F07007B
-			public const int ic_mtrl_chip_checked_black = 2131165307;
-			
-			// aapt resource value: 0x7F07007C
-			public const int ic_mtrl_chip_checked_circle = 2131165308;
-			
-			// aapt resource value: 0x7F07007D
-			public const int ic_mtrl_chip_close_circle = 2131165309;
+			// aapt resource value: 0x7F070085
+			public const int icons8_sol = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int imgbackground = 2131165318;
+			public const int icons8_worker = 2131165318;
+			
+			// aapt resource value: 0x7F07006F
+			public const int ic_logo_ot = 2131165295;
+			
+			// aapt resource value: 0x7F070070
+			public const int ic_menu_alerta = 2131165296;
+			
+			// aapt resource value: 0x7F070071
+			public const int ic_menu_asignados = 2131165297;
+			
+			// aapt resource value: 0x7F070072
+			public const int ic_menu_camera = 2131165298;
+			
+			// aapt resource value: 0x7F070073
+			public const int ic_menu_cargar = 2131165299;
+			
+			// aapt resource value: 0x7F070074
+			public const int ic_menu_culminados = 2131165300;
+			
+			// aapt resource value: 0x7F070075
+			public const int ic_menu_gallery = 2131165301;
+			
+			// aapt resource value: 0x7F070076
+			public const int ic_menu_lista = 2131165302;
+			
+			// aapt resource value: 0x7F070077
+			public const int ic_menu_manage = 2131165303;
+			
+			// aapt resource value: 0x7F070078
+			public const int ic_menu_new = 2131165304;
+			
+			// aapt resource value: 0x7F070079
+			public const int ic_menu_send = 2131165305;
+			
+			// aapt resource value: 0x7F07007A
+			public const int ic_menu_share = 2131165306;
+			
+			// aapt resource value: 0x7F07007B
+			public const int ic_menu_slideshow = 2131165307;
+			
+			// aapt resource value: 0x7F07007C
+			public const int ic_mtrl_chip_checked_black = 2131165308;
+			
+			// aapt resource value: 0x7F07007D
+			public const int ic_mtrl_chip_checked_circle = 2131165309;
+			
+			// aapt resource value: 0x7F07007E
+			public const int ic_mtrl_chip_close_circle = 2131165310;
 			
 			// aapt resource value: 0x7F070087
-			public const int mtrl_snackbar_background = 2131165319;
+			public const int imgbackground = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int mtrl_tabs_default_indicator = 2131165320;
+			public const int mtrl_snackbar_background = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int navigation_empty_icon = 2131165321;
+			public const int mtrl_tabs_default_indicator = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int notification_action_background = 2131165322;
+			public const int navigation_empty_icon = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int notification_bg = 2131165323;
+			public const int notification_action_background = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int notification_bg_low = 2131165324;
+			public const int notification_bg = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int notification_bg_low_normal = 2131165325;
+			public const int notification_bg_low = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int notification_bg_low_pressed = 2131165326;
+			public const int notification_bg_low_normal = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int notification_bg_normal = 2131165327;
+			public const int notification_bg_low_pressed = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int notification_bg_normal_pressed = 2131165328;
+			public const int notification_bg_normal = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int notification_icon_background = 2131165329;
+			public const int notification_bg_normal_pressed = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int notification_template_icon_bg = 2131165330;
+			public const int notification_icon_background = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int notification_template_icon_low_bg = 2131165331;
+			public const int notification_template_icon_bg = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int notification_tile_bg = 2131165332;
+			public const int notification_template_icon_low_bg = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int notify_panel_notification_icon_bg = 2131165333;
+			public const int notification_tile_bg = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int Resource1 = 2131165334;
+			public const int notify_panel_notification_icon_bg = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int side_nav_bar = 2131165335;
+			public const int Resource1 = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int tooltip_frame_dark = 2131165336;
+			public const int side_nav_bar = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int tooltip_frame_light = 2131165337;
+			public const int sin_imagen = 2131165337;
+			
+			// aapt resource value: 0x7F07009A
+			public const int tooltip_frame_dark = 2131165338;
+			
+			// aapt resource value: 0x7F07009B
+			public const int tooltip_frame_light = 2131165339;
 			
 			static Drawable()
 			{
@@ -3695,7 +3891,7 @@ namespace appOrdenTecnica
 			public const int image = 2131230859;
 			
 			// aapt resource value: 0x7F08008C
-			public const int imageView = 2131230860;
+			public const int imageViewUSER = 2131230860;
 			
 			// aapt resource value: 0x7F08008D
 			public const int info = 2131230861;
@@ -4027,14 +4223,14 @@ namespace appOrdenTecnica
 			// aapt resource value: 0x7F0800F5
 			public const int text2 = 2131230965;
 			
-			// aapt resource value: 0x7F0800FD
-			public const int textinput_counter = 2131230973;
-			
 			// aapt resource value: 0x7F0800FE
-			public const int textinput_error = 2131230974;
+			public const int textinput_counter = 2131230974;
 			
 			// aapt resource value: 0x7F0800FF
-			public const int textinput_helper_text = 2131230975;
+			public const int textinput_error = 2131230975;
+			
+			// aapt resource value: 0x7F080100
+			public const int textinput_helper_text = 2131230976;
 			
 			// aapt resource value: 0x7F0800F6
 			public const int textSpacerNoButtons = 2131230966;
@@ -4046,157 +4242,160 @@ namespace appOrdenTecnica
 			public const int textStart = 2131230968;
 			
 			// aapt resource value: 0x7F0800F9
-			public const int textView = 2131230969;
-			
-			// aapt resource value: 0x7F0800FA
-			public const int textViewlbl = 2131230970;
+			public const int textViewCARGOUSER = 2131230969;
 			
 			// aapt resource value: 0x7F0800FB
-			public const int textViewlista = 2131230971;
+			public const int textViewlbl = 2131230971;
 			
 			// aapt resource value: 0x7F0800FC
-			public const int text_input_password_toggle = 2131230972;
+			public const int textViewlista = 2131230972;
 			
-			// aapt resource value: 0x7F080100
-			public const int time = 2131230976;
+			// aapt resource value: 0x7F0800FA
+			public const int textViewNOMUSER = 2131230970;
+			
+			// aapt resource value: 0x7F0800FD
+			public const int text_input_password_toggle = 2131230973;
 			
 			// aapt resource value: 0x7F080101
-			public const int title = 2131230977;
+			public const int time = 2131230977;
 			
 			// aapt resource value: 0x7F080102
-			public const int titleDividerNoCustom = 2131230978;
+			public const int title = 2131230978;
 			
 			// aapt resource value: 0x7F080103
-			public const int title_template = 2131230979;
+			public const int titleDividerNoCustom = 2131230979;
 			
 			// aapt resource value: 0x7F080104
-			public const int toolbar = 2131230980;
+			public const int title_template = 2131230980;
 			
 			// aapt resource value: 0x7F080105
-			public const int top = 2131230981;
+			public const int toolbar = 2131230981;
 			
 			// aapt resource value: 0x7F080106
-			public const int topPanel = 2131230982;
+			public const int top = 2131230982;
 			
 			// aapt resource value: 0x7F080107
-			public const int touch_outside = 2131230983;
+			public const int topPanel = 2131230983;
 			
 			// aapt resource value: 0x7F080108
-			public const int transition_current_scene = 2131230984;
+			public const int touch_outside = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int transition_layout_save = 2131230985;
+			public const int transition_current_scene = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int transition_position = 2131230986;
+			public const int transition_layout_save = 2131230986;
 			
 			// aapt resource value: 0x7F08010B
-			public const int transition_scene_layoutid_cache = 2131230987;
+			public const int transition_position = 2131230987;
 			
 			// aapt resource value: 0x7F08010C
-			public const int transition_transform = 2131230988;
+			public const int transition_scene_layoutid_cache = 2131230988;
 			
 			// aapt resource value: 0x7F08010D
-			public const int txtAccionOrden = 2131230989;
+			public const int transition_transform = 2131230989;
 			
 			// aapt resource value: 0x7F08010E
-			public const int txtCliente = 2131230990;
+			public const int txtAccionOrden = 2131230990;
 			
 			// aapt resource value: 0x7F08010F
-			public const int txtCodigoOrden = 2131230991;
+			public const int txtCliente = 2131230991;
 			
 			// aapt resource value: 0x7F080110
-			public const int txtDiagnostico = 2131230992;
-			
-			// aapt resource value: 0x7F08011F
-			public const int txtestadoTec = 2131231007;
+			public const int txtCodigoOrden = 2131230992;
 			
 			// aapt resource value: 0x7F080111
-			public const int txtFecha = 2131230993;
-			
-			// aapt resource value: 0x7F080112
-			public const int txtFechaAt = 2131230994;
-			
-			// aapt resource value: 0x7F080113
-			public const int txtFechaOrden = 2131230995;
-			
-			// aapt resource value: 0x7F080114
-			public const int txtFirmaCliente = 2131230996;
-			
-			// aapt resource value: 0x7F080115
-			public const int txtFirmaTecnico = 2131230997;
-			
-			// aapt resource value: 0x7F080116
-			public const int txtHora = 2131230998;
-			
-			// aapt resource value: 0x7F080117
-			public const int txtHoraAt = 2131230999;
-			
-			// aapt resource value: 0x7F080118
-			public const int txtHoraOrden = 2131231000;
+			public const int txtDiagnostico = 2131230993;
 			
 			// aapt resource value: 0x7F080120
-			public const int txtidTecnico = 2131231008;
+			public const int txtestadoTec = 2131231008;
+			
+			// aapt resource value: 0x7F080112
+			public const int txtFecha = 2131230994;
+			
+			// aapt resource value: 0x7F080113
+			public const int txtFechaAt = 2131230995;
+			
+			// aapt resource value: 0x7F080114
+			public const int txtFechaOrden = 2131230996;
+			
+			// aapt resource value: 0x7F080115
+			public const int txtFirmaCliente = 2131230997;
+			
+			// aapt resource value: 0x7F080116
+			public const int txtFirmaTecnico = 2131230998;
+			
+			// aapt resource value: 0x7F080117
+			public const int txtHora = 2131230999;
+			
+			// aapt resource value: 0x7F080118
+			public const int txtHoraAt = 2131231000;
 			
 			// aapt resource value: 0x7F080119
-			public const int txtModeloDisp = 2131231001;
+			public const int txtHoraOrden = 2131231001;
 			
 			// aapt resource value: 0x7F080121
-			public const int txtnomTecnico = 2131231009;
+			public const int txtidTecnico = 2131231009;
 			
 			// aapt resource value: 0x7F08011A
-			public const int txtPassword = 2131231002;
-			
-			// aapt resource value: 0x7F08011B
-			public const int txtProblema = 2131231003;
-			
-			// aapt resource value: 0x7F08011C
-			public const int txtSucursal = 2131231004;
-			
-			// aapt resource value: 0x7F08011D
-			public const int txtTecnicoAsignado = 2131231005;
-			
-			// aapt resource value: 0x7F08011E
-			public const int txtUser = 2131231006;
+			public const int txtModeloDisp = 2131231002;
 			
 			// aapt resource value: 0x7F080122
-			public const int @unchecked = 2131231010;
+			public const int txtnomTecnico = 2131231010;
+			
+			// aapt resource value: 0x7F08011B
+			public const int txtPassword = 2131231003;
+			
+			// aapt resource value: 0x7F08011C
+			public const int txtProblema = 2131231004;
+			
+			// aapt resource value: 0x7F08011D
+			public const int txtSucursal = 2131231005;
+			
+			// aapt resource value: 0x7F08011E
+			public const int txtTecnicoAsignado = 2131231006;
+			
+			// aapt resource value: 0x7F08011F
+			public const int txtUser = 2131231007;
 			
 			// aapt resource value: 0x7F080123
-			public const int uniform = 2131231011;
+			public const int @unchecked = 2131231011;
 			
 			// aapt resource value: 0x7F080124
-			public const int unlabeled = 2131231012;
+			public const int uniform = 2131231012;
 			
 			// aapt resource value: 0x7F080125
-			public const int up = 2131231013;
+			public const int unlabeled = 2131231013;
 			
 			// aapt resource value: 0x7F080126
-			public const int useLogo = 2131231014;
+			public const int up = 2131231014;
 			
 			// aapt resource value: 0x7F080127
-			public const int view_foreground = 2131231015;
+			public const int useLogo = 2131231015;
 			
 			// aapt resource value: 0x7F080128
-			public const int view_foreground2 = 2131231016;
+			public const int view_foreground = 2131231016;
 			
 			// aapt resource value: 0x7F080129
-			public const int view_offset_helper = 2131231017;
+			public const int view_foreground2 = 2131231017;
 			
 			// aapt resource value: 0x7F08012A
-			public const int view_tree_saved_state_registry_owner = 2131231018;
+			public const int view_offset_helper = 2131231018;
 			
 			// aapt resource value: 0x7F08012B
-			public const int visible = 2131231019;
+			public const int view_tree_saved_state_registry_owner = 2131231019;
 			
 			// aapt resource value: 0x7F08012C
-			public const int visible_removing_fragment_view_tag = 2131231020;
+			public const int visible = 2131231020;
 			
 			// aapt resource value: 0x7F08012D
-			public const int withText = 2131231021;
+			public const int visible_removing_fragment_view_tag = 2131231021;
 			
 			// aapt resource value: 0x7F08012E
-			public const int wrap_content = 2131231022;
+			public const int withText = 2131231022;
+			
+			// aapt resource value: 0x7F08012F
+			public const int wrap_content = 2131231023;
 			
 			static Id()
 			{

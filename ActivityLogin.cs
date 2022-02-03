@@ -81,23 +81,15 @@ namespace appOrdenTecnica
                     if (resultado.status == true && resultado.code == 1)
                     {
 
-<<<<<<< HEAD
                             ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
                             ISharedPreferencesEditor editor = prefs.Edit();
                             editor.PutString("iduser", resultado.objeto.ID_USUARIO);
                             editor.PutString("nomuserid", resultado.objeto.NOMBRES+' '+resultado.objeto.APELLIDOS); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
                             editor.PutInt("cargo", int.Parse(resultado.objeto.FK_PERFIL));
+                            editor.PutString("fotouser", resultado.objeto.FOTO); 
                             editor.Apply();
-=======
-                        var intent = new Intent(this, typeof(MainActivity));
->>>>>>> 1a53c1e2f87cac90ca451d529fd1d8a133906275
 
-                        ISharedPreferences prefs = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
-                        ISharedPreferencesEditor editor = prefs.Edit();
-                        editor.PutString("iduser", resultado.objeto.ID_USUARIO);
-                        editor.PutString("nomuserid", resultado.objeto.FK_EMPLEADO); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
-                        editor.PutInt("cargo", int.Parse(resultado.objeto.FK_PERFIL));
-                        editor.Apply();
+                        var intent = new Intent(this, typeof(MainActivity));
 
                         StartActivity(intent);
                         cleanText();

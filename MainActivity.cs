@@ -12,7 +12,13 @@ using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
 using appOrdenTecnica.Fragments; // Traemos a los Fragmentos
+using Android.Widget;
 
+
+//using System.Drawing;
+using Android.Graphics;
+//using Java.Lang;
+//using Java.IO;
 
 namespace appOrdenTecnica
 {
@@ -33,7 +39,7 @@ namespace appOrdenTecnica
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
@@ -47,14 +53,39 @@ namespace appOrdenTecnica
             ISharedPreferences pref = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
             pref.GetString(("iduser"), null);
             int cargo = pref.GetInt(("cargo"), 0);
+            string nombreuser = pref.GetString(("nomuserid"), null); 
+
+                string fotouser = "";
+                fotouser = pref.GetString(("fotouser"), null);
+
             Console.WriteLine("cargo VERRRRRRR" + cargo);
 
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view); //ESTE SE LLAMA Y CONTIENE UN HEADER Y UN MENU 2ARCHIVOS
+            View headerView = navigationView.GetHeaderView(0);
             navigationView.SetNavigationItemSelectedListener(this);
             switch (cargo)
             {
-                case 1:
-                    navigationView.Menu.FindItem(Resource.Id.nuev_orden).SetVisible(true);
+                case 5: //Jefe de Operaciones
+
+                    headerView.FindViewById<TextView>(Resource.Id.textViewNOMUSER).Text = nombreuser;// app:headerLayout
+                    headerView.FindViewById<TextView>(Resource.Id.textViewCARGOUSER).Text = "Jefe de Operaciones";
+                    
+
+                    if (fotouser == "sin_imagen.jpg")  //|| fotouser == ""
+                    {
+                        headerView.FindViewById<ImageView>(Resource.Id.imageViewUSER).SetImageResource(Resource.Drawable.sin_imagen); //setImageResource 
+                    }
+                    else{
+                        System.Net.WebRequest request = System.Net.WebRequest.Create("https://i.ibb.co/5T5n6nj/kitten.jpg"); //url = obj = string
+                        System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                        System.Net.WebResponse response = request.GetResponse();
+                        System.IO.Stream responseStream = response.GetResponseStream();
+                        Bitmap bitmap = BitmapFactory.DecodeStream(responseStream);
+                        headerView.FindViewById<ImageView>(Resource.Id.imageViewUSER).SetImageBitmap(bitmap);
+                    }
+                   
+
+                    navigationView.Menu.FindItem(Resource.Id.nuev_orden).SetVisible(true); //app: menu 
                     navigationView.Menu.FindItem(Resource.Id.reg_ord).SetVisible(true);
                     navigationView.Menu.FindItem(Resource.Id.asig_tecn).SetVisible(true);
                     navigationView.Menu.FindItem(Resource.Id.ord_pend).SetVisible(true);
@@ -67,7 +98,25 @@ namespace appOrdenTecnica
                     // Confirmamos la transaccion
                     transaccion.Commit();
                     break;
-                case 2:
+                case 2: // Supervisor : tecnico
+
+                    headerView.FindViewById<TextView>(Resource.Id.textViewNOMUSER).Text = nombreuser;// app:headerLayout
+                    headerView.FindViewById<TextView>(Resource.Id.textViewCARGOUSER).Text = "Supervisor";
+
+                    if (fotouser == "sin_imagen.jpg")  //|| fotouser == ""
+                    {
+                        headerView.FindViewById<ImageView>(Resource.Id.imageViewUSER).SetImageResource(Resource.Drawable.sin_imagen); //setImageResource 
+                    }
+                    else
+                    {
+                        System.Net.WebRequest request = System.Net.WebRequest.Create("https://i.ibb.co/5T5n6nj/kitten.jpg"); //url = obj = string
+                        System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                        System.Net.WebResponse response = request.GetResponse();
+                        System.IO.Stream responseStream = response.GetResponseStream();
+                        Bitmap bitmap = BitmapFactory.DecodeStream(responseStream);
+                        headerView.FindViewById<ImageView>(Resource.Id.imageViewUSER).SetImageBitmap(bitmap);
+                    }
+
                     navigationView.Menu.FindItem(Resource.Id.asig_tecn).SetVisible(true);
                     navigationView.Menu.FindItem(Resource.Id.ord_pend).SetVisible(true);
 
@@ -77,7 +126,25 @@ namespace appOrdenTecnica
                     transaccion2.Replace(Resource.Id.ConteinerLayout, FragmentPorAsignarLista);
                     transaccion2.Commit();
                     break;
-                case 3:
+                case 1: //Tecnico
+
+                    headerView.FindViewById<TextView>(Resource.Id.textViewNOMUSER).Text = nombreuser;// app:headerLayout
+                    headerView.FindViewById<TextView>(Resource.Id.textViewCARGOUSER).Text = "Técnico";
+
+                    if (fotouser == "sin_imagen.jpg")  //|| fotouser == ""
+                    {
+                        headerView.FindViewById<ImageView>(Resource.Id.imageViewUSER).SetImageResource(Resource.Drawable.sin_imagen); //setImageResource 
+                    }
+                    else
+                    {
+                        System.Net.WebRequest request = System.Net.WebRequest.Create("https://i.ibb.co/5T5n6nj/kitten.jpg"); //url = obj = string
+                        System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                        System.Net.WebResponse response = request.GetResponse();
+                        System.IO.Stream responseStream = response.GetResponseStream();
+                        Bitmap bitmap = BitmapFactory.DecodeStream(responseStream);
+                        headerView.FindViewById<ImageView>(Resource.Id.imageViewUSER).SetImageBitmap(bitmap);
+                    }
+
                     navigationView.Menu.FindItem(Resource.Id.item_asignados).SetVisible(true);
                     navigationView.Menu.FindItem(Resource.Id.item_culminados).SetVisible(true);
                     //primer fragment
