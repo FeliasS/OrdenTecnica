@@ -58,6 +58,8 @@ namespace appOrdenTecnica
                 string fotouser = "";
                 fotouser = pref.GetString(("fotouser"), null);
 
+            //string empleado = pref.GetString(("idEmpleado"), null); 
+
             Console.WriteLine("cargo VERRRRRRR" + cargo);
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view); //ESTE SE LLAMA Y CONTIENE UN HEADER Y UN MENU 2ARCHIVOS

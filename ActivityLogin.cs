@@ -86,7 +86,8 @@ namespace appOrdenTecnica
                             editor.PutString("iduser", resultado.objeto.ID_USUARIO);
                             editor.PutString("nomuserid", resultado.objeto.NOMBRES+' '+resultado.objeto.APELLIDOS); //aqui quisiera ek nombre de usuario de una vez pero se tendra que llamar desde main
                             editor.PutInt("cargo", int.Parse(resultado.objeto.FK_PERFIL));
-                            editor.PutString("fotouser", resultado.objeto.FOTO); 
+                            editor.PutString("fotouser", resultado.objeto.FOTO);
+                            editor.PutString("idEmpleado", resultado.objeto.FK_EMPLEADO);
                             editor.Apply();
 
                         var intent = new Intent(this, typeof(MainActivity));

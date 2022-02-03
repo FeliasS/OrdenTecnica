@@ -10,9 +10,11 @@ using AndroidX.RecyclerView.Widget;
 using AndroidX.Transitions;
 using appOrdenTecnica.Adapter;
 using appOrdenTecnica.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 
 namespace appOrdenTecnica.Fragments
@@ -30,12 +32,13 @@ namespace appOrdenTecnica.Fragments
         String codigoValue = "";
 
         ListaAsignadosTodosAdapter adapter;
-        List<OrdenTecnica> ordenes;
+        List<ListaOrdenTecnica> ordenes;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Activity.Title = "ASIGNADOS";
+
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -48,7 +51,7 @@ namespace appOrdenTecnica.Fragments
             recyclerview.HasFixedSize = true;
 
             linearLayoutManager = new LinearLayoutManager(Activity);
-            GenerarItem();
+            LoadList();
             recyclerview.SetLayoutManager(linearLayoutManager);
 
             return view;
@@ -92,19 +95,7 @@ namespace appOrdenTecnica.Fragments
             }
 
         }
-        private void GenerarItem()
-        {
-            ordenes = new List<OrdenTecnica>();
-            for (int i = 0; i < 50; i++)
-            {
-                ordenes.Add(new OrdenTecnica("C000" + i,
-                    "15/10/2021", "08:00 AM",
-                    "ASIGNADOS Y"));
-            }
-            adapter = new ListaAsignadosTodosAdapter(Activity, ordenes, this);
-            recyclerview.SetAdapter(adapter);
-        }
-
+     
         private void SearchListener()
         {
             searchView.SetOnQueryTextListener(this);
@@ -119,6 +110,40 @@ namespace appOrdenTecnica.Fragments
         public bool OnQueryTextSubmit(string query)
         {
             throw new NotImplementedException();
+        }
+
+        private async void LoadList()
+        {
+
+            ISharedPreferences pref = Activity.GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+            string empleado = pref.GetString(("idEmpleado"), null);
+
+            BuscarEmpOrdenTecnica log = new BuscarEmpOrdenTecnica();
+            log.idEmpleado = empleado;
+
+            HttpClient client = new HttpClient();
+            Uri url = new Uri("http://micmaproyectos.com/orden/buscarOrdenByEmpleado");
+
+            var json = JsonConvert.SerializeObject(log);
+            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(url, contentJson);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK) // System.Net.HttpStatusCode.OK
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                var resultado = JsonConvert.DeserializeObject<OrdenTecnica>(content);
+
+                ordenes = resultado.lista;
+                adapter = new ListaAsignadosTodosAdapter(Activity, resultado.lista, this);
+                recyclerview.SetAdapter(adapter);
+
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+
+                Toast.MakeText(Activity, "No existen registros", ToastLength.Short).Show();
+            }
+
         }
     }
 }

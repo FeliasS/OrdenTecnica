@@ -46,7 +46,7 @@ namespace appOrdenTecnica.Fragments
             recyclerview = view.FindViewById<RecyclerView>(Resource.Id.recyViewListaOrdenes);
             recyclerview.HasFixedSize = true;
             linearLayoutManager = new LinearLayoutManager(Activity);
-            GenerarItem();
+            //GenerarItem();
             recyclerview.SetLayoutManager(linearLayoutManager);
             return view;
         }
@@ -89,7 +89,7 @@ namespace appOrdenTecnica.Fragments
 
         }
 
-        private void GenerarItem()
+        /*private void GenerarItem()
         {
             ordenes = new List<OrdenTecnica>();
             for (int i = 0; i < 50; i++)
@@ -100,7 +100,7 @@ namespace appOrdenTecnica.Fragments
             }
             adapter = new ListaAsignadosTodosAdapter(Activity, ordenes,this);
             recyclerview.SetAdapter(adapter);
-        }
+        }*/
 
         private void SearchListener()
         {

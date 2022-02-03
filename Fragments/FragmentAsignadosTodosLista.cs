@@ -10,9 +10,11 @@ using AndroidX.RecyclerView.Widget;
 using AndroidX.Transitions;
 using appOrdenTecnica.Adapter;
 using appOrdenTecnica.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 
 namespace appOrdenTecnica.Fragments
@@ -48,7 +50,7 @@ namespace appOrdenTecnica.Fragments
             recyclerview.HasFixedSize = true;
 
             linearLayoutManager = new LinearLayoutManager(Activity);
-            GenerarItem();
+            LoadList();
             recyclerview.SetLayoutManager(linearLayoutManager);
 
             return view;
@@ -60,7 +62,7 @@ namespace appOrdenTecnica.Fragments
 
         }
 
-        private void GenerarItem()
+        /*private void GenerarItem()
         {
             ordenes = new List<OrdenTecnica>();
             for (int i = 0; i < 50; i++)
@@ -71,7 +73,7 @@ namespace appOrdenTecnica.Fragments
             }
             adapter = new ListaAsignadosTodosAdapter(Activity, ordenes, this);
             recyclerview.SetAdapter(adapter);
-        }
+        }*/
 
         private void SearchListener()
         {
@@ -87,6 +89,32 @@ namespace appOrdenTecnica.Fragments
         public bool OnQueryTextSubmit(string query)
         {
             throw new NotImplementedException();
+        }
+
+        private async void LoadList() {
+
+            HttpClient client = new HttpClient();
+            Uri url = new Uri("http://micmaproyectos.com/orden/listarTodos");
+
+            //var json = JsonConvert.SerializeObject(log);
+            //var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.GetAsync(url);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK) // System.Net.HttpStatusCode.OK
+            {               
+                string content = await response.Content.ReadAsStringAsync();
+                var resultado = JsonConvert.DeserializeObject<OrdenTecnica>(content);
+
+                adapter = new ListaAsignadosTodosAdapter(Activity, resultado.lista, this);
+                recyclerview.SetAdapter(adapter);
+
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+
+                Toast.MakeText(Activity, "No existen registros", ToastLength.Short).Show();
+            }
+
         }
     }
 }

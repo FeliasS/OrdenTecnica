@@ -18,18 +18,18 @@ namespace appOrdenTecnica.Adapter
     {
         // Definiendo los elementos de item_list_revisar
         Context context;
-        List<OrdenTecnica> items;
+        List<ListaOrdenTecnica> items;
 
         private OnItemListener gOnItemListener;
-        private List<OrdenTecnica> originalitems;
+        private List<ListaOrdenTecnica> originalitems;
 
-        public ListaAsignadosTodosAdapter(Context context, List<OrdenTecnica> items, OnItemListener OnItemListener)
+        public ListaAsignadosTodosAdapter(Context context, List<ListaOrdenTecnica> items, OnItemListener OnItemListener)
         {
             this.context = context;
             this.items = items;
 
             this.gOnItemListener = OnItemListener;
-            this.originalitems = new List<OrdenTecnica>();
+            this.originalitems = new List<ListaOrdenTecnica>();
             originalitems.AddRange(items);
         }
 
@@ -44,10 +44,10 @@ namespace appOrdenTecnica.Adapter
         {
             // Instanciamos y seteamos en en el view los atributos del modelo
             MyViewHolder myViewHolder = holder as MyViewHolder;
-            myViewHolder.txt_codigo_orden.Text = items[position].Codigo;
-            myViewHolder.txt_fecha_orden.Text = items[position].Fecha;
-            myViewHolder.txt_hora_orden.Text = items[position].Hora;
-            myViewHolder.txt_accion_orden.Text = items[position].Accion;
+            myViewHolder.txt_codigo_orden.Text = items[position].COD_ORDEN;
+            myViewHolder.txt_fecha_orden.Text = items[position].FECHA_ORDEN;
+            myViewHolder.txt_hora_orden.Text = items[position].HORA_ORDEN;
+            myViewHolder.txt_accion_orden.Text = items[position].ESTADO;//items[0].lista[position].ESTADO;
         }
 
         // Obtenemos la cantida de la lista 
@@ -106,8 +106,16 @@ namespace appOrdenTecnica.Adapter
             else
             {
                 items.Clear();
-                List<OrdenTecnica> newlist = originalitems.Where(x => x.Codigo.StartsWith(SearchInfo)).ToList();
+                List<ListaOrdenTecnica> newlist = originalitems.Where(x => x.COD_ORDEN.StartsWith(SearchInfo)).ToList(); //StartsWith, Contains
                 items.AddRange(newlist);
+                
+                
+                /*List<OrdenTecnica> newlist = new List<OrdenTecnica>();
+
+                for (int i = 0; i <= originalitems.Count; i++){
+                    newlist=originalitems.Where(x => (x.lista[i].COD_ORDEN).StartsWith(SearchInfo)).ToList();//x.lista[i].COD_ORDEN
+                }*/
+               
             }
             NotifyDataSetChanged();
 

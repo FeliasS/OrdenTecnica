@@ -54,7 +54,7 @@ namespace appOrdenTecnica.Fragments
             // Instanciamos el lineaLayoutManager en el contexto activity
             linearLayoutManager = new LinearLayoutManager(Activity);
 
-            GenerarItem();
+            //GenerarItem();
 
             recyclerview.SetLayoutManager(linearLayoutManager);
           
@@ -101,7 +101,7 @@ namespace appOrdenTecnica.Fragments
 
         }
 
-        private void GenerarItem()
+        /*private void GenerarItem()
         {
             ordenes = new List<OrdenTecnica>();
             for (int i = 0; i < 50; i++)
@@ -112,7 +112,7 @@ namespace appOrdenTecnica.Fragments
             }
             adapter = new ListaOrdenAdapter(Activity, ordenes,this);
             recyclerview.SetAdapter(adapter);
-        }
+        }*/
 
         private void SearchListener() {
 
