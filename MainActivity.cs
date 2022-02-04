@@ -17,6 +17,7 @@ using Android.Widget;
 
 //using System.Drawing;
 using Android.Graphics;
+using Xamarin.Essentials;
 //using Java.Lang;
 //using Java.IO;
 
@@ -36,6 +37,8 @@ namespace appOrdenTecnica
         FragmentCerradasLista FragmentCerradasLista;
         FragmentEnProcesoxTecLista FragmentEnProcesoxTecLista;
         FragmentCulminadasxTecLista FragmentCerradasxTecLista;
+
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -61,6 +64,9 @@ namespace appOrdenTecnica
 
                 string fotouser = "";
                 fotouser = pref.GetString(("fotouser"), null);
+
+            //Agregamos el evento que validara la coneccion
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
 
             //string empleado = pref.GetString(("idEmpleado"), null); 
 
@@ -168,6 +174,30 @@ namespace appOrdenTecnica
 
             }
 
+        }
+
+        private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            //Validamos si la app esta conectado a internet
+            if (Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            {
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                alert.SetTitle("Mensaje");
+                alert.SetMessage("Se ha perdido la conexion a internet");
+                alert.SetNeutralButton("ACEPTAR", (sender, args) =>
+                {
+
+                });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+                return;
+            }
+            else
+            {
+                Toast.MakeText(this, "Conexion a Internet Exitosa", ToastLength.Short).Show();
+                Console.WriteLine("usted tiene internet");
+
+            }
         }
 
         int counter = 0;
