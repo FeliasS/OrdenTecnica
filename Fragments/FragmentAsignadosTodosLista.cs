@@ -27,7 +27,7 @@ namespace appOrdenTecnica.Fragments
         private LinearLayoutManager linearLayoutManager;
 
         ListaAsignadosTodosAdapter adapter;
-        List<OrdenTecnica> ordenes;
+        List<ListaOrdenTecnica> ordenes;
 
         LinearLayout hiddenView;
         CardView cardView;
@@ -93,7 +93,34 @@ namespace appOrdenTecnica.Fragments
 
         private async void LoadList() {
 
+            BuscarEstadoOrdenTecnica log = new BuscarEstadoOrdenTecnica();
+            log.estado = 2;
+
             HttpClient client = new HttpClient();
+            Uri url = new Uri("http://micmaproyectos.com/orden/buscarOrdenByEstado");
+
+            var json = JsonConvert.SerializeObject(log);
+            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(url, contentJson);
+            //var response = await client.GetAsync(url);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK) // System.Net.HttpStatusCode.OK
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                var resultado = JsonConvert.DeserializeObject<OrdenTecnica>(content);
+
+                ordenes = resultado.lista;
+                adapter = new ListaAsignadosTodosAdapter(Activity, resultado.lista, this);
+                recyclerview.SetAdapter(adapter);
+
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+
+                Toast.MakeText(Activity, "No existen registros", ToastLength.Short).Show();
+            }
+
+            /*HttpClient client = new HttpClient();
             Uri url = new Uri("http://micmaproyectos.com/orden/listarTodos");
 
             //var json = JsonConvert.SerializeObject(log);
@@ -113,7 +140,7 @@ namespace appOrdenTecnica.Fragments
             {
 
                 Toast.MakeText(Activity, "No existen registros", ToastLength.Short).Show();
-            }
+            }*/
 
         }
     }

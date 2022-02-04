@@ -32,6 +32,10 @@ namespace appOrdenTecnica
         FragmentAsignadosTodosLista FragmentAsignadosTodosLista;//todos los pedidos asignados FragmentPendientesLista
         FragmentAsignadosxTecLista FragmentAsignadosxTecLista; //solo los pedidos asignados a ese tecnico FragmentAsignadosLista
         FragmentCulminadosLista FragmentCulminadosLista;
+        FragmentEnProcesoLista FragmentEnProcesoLista;
+        FragmentCerradasLista FragmentCerradasLista;
+        FragmentEnProcesoxTecLista FragmentEnProcesoxTecLista;
+        FragmentCulminadasxTecLista FragmentCerradasxTecLista;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -90,7 +94,10 @@ namespace appOrdenTecnica
                     navigationView.Menu.FindItem(Resource.Id.nuev_orden).SetVisible(true); //app: menu 
                     navigationView.Menu.FindItem(Resource.Id.reg_ord).SetVisible(true);
                     navigationView.Menu.FindItem(Resource.Id.asig_tecn).SetVisible(true);
-                    navigationView.Menu.FindItem(Resource.Id.ord_pend).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.ord_pend).SetVisible(true); //todas las asignadas sin importar tecnico
+                    navigationView.Menu.FindItem(Resource.Id.item_enproceso).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.item_culminados).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.item_cerradas).SetVisible(true);
                     // Instanciamos el objeto
                     frgListOrdenes = new Fragments_lista_ordenes();
                     // Asignamos variable a Fragment Manager e iniciamos la transaccion
@@ -121,6 +128,8 @@ namespace appOrdenTecnica
 
                     navigationView.Menu.FindItem(Resource.Id.asig_tecn).SetVisible(true);
                     navigationView.Menu.FindItem(Resource.Id.ord_pend).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.item_enproceso).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.item_culminados).SetVisible(true);
 
                     //primer fragment
                     FragmentPorAsignarLista = new FragmentPorAsignarLista();
@@ -148,7 +157,8 @@ namespace appOrdenTecnica
                     }
 
                     navigationView.Menu.FindItem(Resource.Id.item_asignados).SetVisible(true);
-                    navigationView.Menu.FindItem(Resource.Id.item_culminados).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.item_empleado_enproceso).SetVisible(true);
+                    navigationView.Menu.FindItem(Resource.Id.item_empleado_culminados).SetVisible(true);
                     //primer fragment
                     FragmentAsignadosxTecLista = new FragmentAsignadosxTecLista();
                     var transaccion3 = SupportFragmentManager.BeginTransaction();
@@ -259,12 +269,44 @@ namespace appOrdenTecnica
                 transaccion.Replace(Resource.Id.ConteinerLayout, FragmentAsignadosxTecLista);
                 transaccion.Commit();
             }
+            else if (id == Resource.Id.item_empleado_enproceso)
+            {
+
+                FragmentEnProcesoxTecLista = new FragmentEnProcesoxTecLista();
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentEnProcesoxTecLista);
+                transaccion.Commit();
+            }
+            else if (id == Resource.Id.item_empleado_culminados)
+            {
+
+                FragmentCerradasxTecLista = new FragmentCulminadasxTecLista();
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentCerradasxTecLista);
+                transaccion.Commit();
+            }
+            else if (id == Resource.Id.item_enproceso)
+            {
+
+                FragmentEnProcesoLista = new FragmentEnProcesoLista();
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentEnProcesoLista);
+                transaccion.Commit();
+            }
             else if (id == Resource.Id.item_culminados)
             {
 
                 FragmentCulminadosLista = new FragmentCulminadosLista();
                 var transaccion = SupportFragmentManager.BeginTransaction();
                 transaccion.Replace(Resource.Id.ConteinerLayout, FragmentCulminadosLista);
+                transaccion.Commit();
+            }
+            else if (id == Resource.Id.item_cerradas)
+            {
+
+                FragmentCerradasLista = new FragmentCerradasLista();
+                var transaccion = SupportFragmentManager.BeginTransaction();
+                transaccion.Replace(Resource.Id.ConteinerLayout, FragmentCerradasLista);
                 transaccion.Commit();
             }
             else if (id == Resource.Id.cerr_ses)

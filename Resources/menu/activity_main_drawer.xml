@@ -12,7 +12,7 @@
         <item
             android:id="@+id/reg_ord"
             android:icon="@drawable/ic_menu_lista"
-            android:title="REGISTRADOS"
+            android:title="ORDENES REGISTRADOS/CREADAS/POR ASIGNAR"
 			android:visible="false"/>
         <item
             android:id="@+id/asig_tecn"
@@ -22,17 +22,39 @@
         <item
             android:id="@+id/ord_pend"
             android:icon="@drawable/ic_menu_alerta"
-            android:title="PENDIENTES"
+            android:title="ORDENES PENDIENTES/ASIGNADAS TODAS"
 			android:visible="false"/>
 	    <item
             android:id="@+id/item_asignados"
             android:icon="@drawable/ic_menu_asignados"
-            android:title="ASIGNADOS"
+            android:title="ASIGNADOS / POR EMPLEADO"
+			android:visible="false"/>
+		<!--//new-->
+		<item
+            android:id="@+id/item_empleado_enproceso"
+            android:icon="@drawable/ic_menu_alerta"
+            android:title="EN PROCESO"
+			android:visible="false"/>
+		<item
+            android:id="@+id/item_empleado_culminados"
+            android:icon="@drawable/ic_menu_culminados"
+            android:title="ATENDIDAS"
+			android:visible="false"/>
+		<item
+            android:id="@+id/item_enproceso" 
+            android:icon="@drawable/ic_menu_alerta"
+            android:title="ORDENES EN PROCESO"
 			android:visible="false"/>
 		<item
             android:id="@+id/item_culminados"
             android:icon="@drawable/ic_menu_culminados"
-            android:title="CULMINADOS"
+            android:title="ORDENES ATENDIDAS"
+			android:visible="false"/>
+		<!--//new-->
+		<item
+            android:id="@+id/item_cerradas"
+            android:icon="@drawable/ic_menu_culminados"
+            android:title="ORDENES CERRADAS"
 			android:visible="false"/>
     </group>
 

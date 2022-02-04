@@ -25,6 +25,14 @@ namespace appOrdenTecnica.Model
             this.idEmpleado = idEmpleado;
         }
     }
+    public class BuscarEstadoOrdenTecnica
+    {
+        public int estado { get; set; }
+
+        public BuscarEstadoOrdenTecnica()
+        {
+        }
+    }
 
     public class OrdenTecnica
     {

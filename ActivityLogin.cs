@@ -53,7 +53,7 @@ namespace appOrdenTecnica
             {
                 Console.WriteLine("campos llenos");
 
-                Usuario1 log = new Usuario1();
+                Usuario log = new Usuario();
                 log.usuario = _user;
                 log.password = _pass;
 

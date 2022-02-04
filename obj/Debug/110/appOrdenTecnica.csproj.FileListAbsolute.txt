@@ -1342,7 +1342,6 @@ C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\bin
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\build.props
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\adb.props
-C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\appOrdenTecnica.csproj.AssemblyReference.cache
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\res.flag
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\lp\38\jl\files.cache
@@ -1602,10 +1601,14 @@ C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc640dbacfffad81f79c\ListaTecnicosAdapter_MyViewHolder.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentAsignadosTodosLista.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentAsignadosxTecLista.java
+C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentCerradasLista.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentCrearOrden.java
+C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentCulminadasxTecLista.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentCulminadosLista.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentDelTecnicoOrden.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentEditarOrden.java
+C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentEnProcesoLista.java
+C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentEnProcesoxTecLista.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentPorAsignarLista.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\FragmentPorAsignarOrden.java
 C:\Users\Poaty\source\repos\2117171414\OrdenTecnica-ver4\OrdenTecnica-master\obj\Debug\110\android\src\crc6424221de58926ba2a\Fragments_lista_ordenes.java

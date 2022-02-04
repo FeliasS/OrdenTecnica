@@ -133,8 +133,8 @@ namespace appOrdenTecnica.Fragments
                 string content = await response.Content.ReadAsStringAsync();
                 var resultado = JsonConvert.DeserializeObject<OrdenTecnica>(content);
 
-                ordenes = resultado.lista;
-                adapter = new ListaAsignadosTodosAdapter(Activity, resultado.lista, this);
+                ordenes = resultado.lista.Where(x => x.ESTADO.StartsWith("2")).ToList(); ;
+                adapter = new ListaAsignadosTodosAdapter(Activity, ordenes, this);
                 recyclerview.SetAdapter(adapter);
 
             }

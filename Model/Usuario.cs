@@ -14,43 +14,62 @@ namespace appOrdenTecnica.Model
 {
     public class Usuario
     {
-        public string idUser { get; set; }
-        public string nomUser { get; set; }
-        public int cargoUser { get; set; }
-        public string passwordUser { get; set; }
+        public string usuario { get; set; }
+        public string password { get; set; }
 
         public Usuario()
         {
         }
+    }
+    public class Usuariobd
+    {
+        public bool status { get; set; }
+        public int code { get; set; }
+        public string message { get; set; }
+        public ObjetoUsuario objeto { get; set; }
 
-        public Usuario(string idUser, string nomUser, int cargoUser, string passwordUser)
+        public Usuariobd(bool status, int code, string message, ObjetoUsuario objeto)
         {
-            this.idUser = idUser;
-            this.nomUser = nomUser;
-            this.cargoUser = cargoUser;
-            this.passwordUser = passwordUser;
+            this.status = status;
+            this.code = code;
+            this.message = message;
+            this.objeto = objeto;
         }
 
-        int perm=0;
-        public Usuario Tempbd(string _user, string _pass) {
+        public Usuariobd()
+        {
+        }
+    }
+    public class ObjetoUsuario
+    {
 
-            List<Usuario> objUsu = new List<Usuario>();
-            objUsu.Add(new Usuario() { idUser = "U01", nomUser = "Karina12", cargoUser = 1 , passwordUser = "123"}); //1 = secretario = supervisor operacional;
-            objUsu.Add(new Usuario() { idUser = "U02", nomUser = "Lopez5", cargoUser = 2 , passwordUser = "123" }); //2 = supervisor tecnico;
-            objUsu.Add(new Usuario() { idUser = "U03", nomUser = "Juan08", cargoUser = 3 , passwordUser = "123" }); //3 = tecnico;
+        public string ID_USUARIO { get; set; }
+        public string COD_USUARIO { get; set; }
+        public string USUARIO { get; set; }
+        public string CONTRASEÑA { get; set; }
+        public string FOTO { get; set; }
+        public string ESTADO { get; set; }
+        public string FK_PERFIL { get; set; }
+        public string FK_EMPLEADO { get; set; }
+        public string NOMBRES { get; set; }
+        public string APELLIDOS { get; set; }
 
-            List<Usuario> newlist = objUsu.Where(x => x.nomUser.Equals(_user)).ToList(); //StartsWith, Contains
-            Usuario obj = new Usuario();
-            foreach (Usuario aPart in newlist)
-            {
-                obj.idUser = aPart.idUser;
-                obj.cargoUser = aPart.cargoUser;
-            }
-            perm = newlist.Count;
-
-            return obj;
-
+        public ObjetoUsuario()
+        {
         }
 
+        public ObjetoUsuario(string iD_USUARIO, string cOD_USUARIO, string uSUARIO, string cONTRASEÑA, string fOTO, string eSTADO, string fK_PERFIL, string fK_EMPLEADO, string nOMBRES, string aPELLIDOS)
+        {
+            ID_USUARIO = iD_USUARIO;
+            COD_USUARIO = cOD_USUARIO;
+            USUARIO = uSUARIO;
+            CONTRASEÑA = cONTRASEÑA;
+            FOTO = fOTO;
+            ESTADO = eSTADO;
+            FK_PERFIL = fK_PERFIL;
+            FK_EMPLEADO = fK_EMPLEADO;
+            NOMBRES = nOMBRES;
+            APELLIDOS = aPELLIDOS;
+        }
     }
 }
